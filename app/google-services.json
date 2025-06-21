@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "150755625693",
+    "project_id": "project-c-27c6f",
+    "storage_bucket": "project-c-27c6f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150755625693:android:6f92ca78377ab94f416934",
+        "android_client_info": {
+          "package_name": "com.irons.projectc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150755625693-46km87als9co8cfjvkqhbhf13vptrh02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.irons.projectc",
+            "certificate_hash": "0918ca076f565820a6dbc93565d5f37249e25037"
+          }
+        },
+        {
+          "client_id": "150755625693-3dg4217ob7squa5ttss28lis8onjguf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7VqO-uOyZuG3biUDNgW9rPWaOek_TeQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150755625693-3dg4217ob7squa5ttss28lis8onjguf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
