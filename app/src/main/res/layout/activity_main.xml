@@ -9,4 +9,98 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:id="@+id/tvMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/main_title"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/play_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/settings_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAbout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/about_me_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignOut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/sign_out_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/exit_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

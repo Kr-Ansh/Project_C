@@ -19,6 +19,7 @@
     <string name="main_title">Clue.dicode</string>
     <string name="play_button">Play</string>
     <string name="settings_button">Settings</string>
-    <string name="about_us_button">About Us</string>
+    <string name="about_me_button">About Me</string>
     <string name="sign_out_button">Sign Out</string>
+    <string name="exit_button">Exit</string>
 </resources>

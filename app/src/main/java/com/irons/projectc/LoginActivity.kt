@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             .requestEmail()
             .build()
 
-        googleSignInClient = GoogleSignIn.getClient(this@LoginActivity, gso)
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         signIn()
     }
