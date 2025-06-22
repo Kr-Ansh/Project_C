@@ -1,7 +1,10 @@
 package com.irons.projectc
 
+import android.app.DatePickerDialog
 import android.content.Intent
+import android.icu.util.Calendar
 import android.os.Bundle
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultCallback
@@ -21,7 +24,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.irons.projectc.databinding.ActivityLoginBinding
 
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     lateinit var loginBinding: ActivityLoginBinding
     //*********************** Google Sign In ***********************
@@ -29,6 +32,12 @@ class LoginActivity : AppCompatActivity() {
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
     //***************************************************************
+
+    //****** For DOB ***************
+    var userDay = 0
+    var userMonth = 0
+    var userYear = 0
+    //****************************
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +50,25 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        //****************DOB picker************************
+        loginBinding.userInputDOB.isFocusable = false
+        loginBinding.userInputDOB.setOnClickListener {
+
+            val cal: Calendar = Calendar.getInstance()
+            userDay = cal.get(Calendar.DAY_OF_MONTH)
+            userMonth = cal.get(Calendar.MONTH)
+            userYear = cal.get(Calendar.YEAR)
+
+            DatePickerDialog(this@LoginActivity, this@LoginActivity, userYear, userMonth, userDay).show()
+        }
+        //**************************************************
+
+        //****************Google Sign In**********************
         registerActivityForGoogleSignIn()
         loginBinding.buttonGoogleSignIn.setOnClickListener {
             signInGoogle()
         }
+        //*****************************************************
     }
 
     //*********************** Google Sign In ***********************
@@ -127,4 +151,13 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     //*********************************************************
+
+    // Date picker
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        userDay = dayOfMonth
+        userMonth = month
+        userYear = year
+
+        loginBinding.userInputDOB.setText("$userDay/$userMonth/$userYear")
+    }
 }
