@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         registerActivityForGoogleSignIn()
-        loginBinding.buttonGoogle.setOnClickListener {
+        loginBinding.buttonGoogleSignIn.setOnClickListener {
             signInGoogle()
         }
     }

@@ -35,11 +35,43 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etEmail"
+            android:id="@+id/etUsername"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="60dp"
+            android:layout_marginEnd="50dp"
+            android:hint="@string/username_hint"
+            android:textColorHint="#8CFFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxStrokeColor="@color/dark_gray"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/dark_gray"
+            app:hintTextColor="#9AFFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/baseline_person_24"
+            app:startIconTint="@color/dark_gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userInputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEmail"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="50dp"
             android:hint="@string/email_hint"
             android:textColorHint="#8CFFFFFF"
@@ -55,7 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etUsername"
             app:startIconDrawable="@android:drawable/sym_action_email"
             app:startIconTint="@color/dark_gray">
 
@@ -67,13 +99,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etPassword"
+            android:id="@+id/etDob"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="50dp"
-            android:hint="@string/password_hint"
+            android:hint="@string/dob_hint"
             android:textColorHint="#8CFFFFFF"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusBottomEnd="15dp"
@@ -88,126 +120,84 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etEmail"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/dark_gray"
-            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:startIconDrawable="@drawable/outline_calendar_month_24"
             app:startIconTint="@color/dark_gray">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userInputPassword"
+                android:id="@+id/userInputDOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="date" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tvForgotPassword"
+        <View
+            android:id="@+id/view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/forgot_password"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
-        <Button
-            android:id="@+id/buttonSignIn"
-            android:layout_width="200dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/dark_gray"
-            android:fontFamily="@font/orbitron"
-            android:text="@string/sign_in_button"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/buttonGoogle"
+            android:layout_height="3dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/buttonGoogleSignIn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSignIn">
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="3dp"
-                android:layout_weight="1"
-                android:background="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:gravity="center"
-                android:text="@string/or_text"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="3dp"
-                android:layout_weight="1"
-                android:background="@color/black" />
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/etDob" />
 
         <!--Create your custom button for google sign in-->
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonGoogle"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
+            android:id="@+id/buttonGoogleSignIn"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/dark_gray"
+            android:fontFamily="@font/orbitron"
             android:text="@string/google_sign_in"
             android:textColor="@color/white"
             app:cornerRadius="10dp"
             app:icon="@drawable/googleg_standard_color_18"
             app:iconTint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tvSignUp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonFacebookSignIn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <TextView
-            android:id="@+id/tvSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="@string/sign_up_text"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="200dp"
-            android:layout_height="55dp"
-            android:layout_marginBottom="35dp"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFacebookSignIn"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/dark_gray"
             android:fontFamily="@font/orbitron"
-            android:text="@string/register_button"
+            android:text="@string/facebook_sign_in"
             android:textColor="@color/white"
-            android:textSize="16sp"
             app:cornerRadius="10dp"
+            app:icon="@drawable/facbook"
+            app:iconTint="@color/white"
+            app:iconSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAnonymousSignIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonGoogleSignIn" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnonymousSignIn"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/dark_gray"
+            android:fontFamily="@font/orbitron"
+            android:text="@string/anonymous_sign_in"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/outline_person_shield_24"
+            app:iconTint="@color/white"
+            app:iconSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFacebookSignIn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

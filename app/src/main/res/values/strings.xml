@@ -9,11 +9,9 @@
     <string name="login_title">Login</string>
     <string name="username_hint">Username</string>
     <string name="email_hint">Email ID</string>
-    <string name="password_hint">Password</string>
+    <string name="dob_hint">Year of Birth</string>
     <string name="sign_in_button">Sign In</string>
-    <string name="register_button">Register</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="or_text">OR</string>
     <string name="google_sign_in">Continue with Google</string>
-    <string name="sign_up_text">Don\'t have an account yet?</string>
+    <string name="facebook_sign_in">Continue with Facebook</string>
+    <string name="anonymous_sign_in">Continue Anonymously</string>
 </resources>
