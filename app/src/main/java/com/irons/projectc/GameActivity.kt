@@ -1,15 +1,12 @@
 package com.irons.projectc
 
-import android.animation.AnimatorInflater
-import android.animation.ObjectAnimator
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
-import com.irons.projectc.MainActivity
-import com.irons.projectc.chapters.Level0Fragment
+import com.irons.projectc.chapters.ChaptersFragment
 import com.irons.projectc.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {
@@ -27,12 +24,12 @@ class GameActivity : AppCompatActivity() {
             insets
         }
 
-        //***************** Calls Level0Fragment ********************
+        //***************** Calls ChaptersFragment ********************
         val fragmentManager: FragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        val fragLevel0 = Level0Fragment()
+        val chaptersFragment = ChaptersFragment()
 
-        fragmentTransaction.add(R.id.frameLayout, fragLevel0)
+        fragmentTransaction.add(R.id.frameLayout, chaptersFragment)
         fragmentTransaction.commit()
         //************************************************************
 

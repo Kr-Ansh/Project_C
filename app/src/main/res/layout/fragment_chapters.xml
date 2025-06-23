@@ -2,11 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frag1"
+    android:id="@+id/fragChapters"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".chapters.Level0Fragment">
+    tools:context=".chapters.ChaptersFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -133,6 +133,7 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:visibility="invisible"
             app:cornerRadius="10dp"
             app:icon="@drawable/outline_arrow_forward_ios_24"
             app:iconGravity="end"

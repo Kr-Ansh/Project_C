@@ -27,12 +27,15 @@
     <string name="next_button">Next</string>
     <string name="back_button">Back</string>
 
-    <!--  Level 0  -->
-    <string name="chapter_title_1">Level 0</string>
+    <!--  Chapter 0  -->
+    <string name="chapter_title_0">Chapter 0</string>
     <string name="level_0.1">0.1</string>
     <string name="level_0.2">0.2</string>
     <string name="level_0.3">0.3</string>
     <string name="level_0.4">0.4</string>
+
+    <!--  Level 0.1  -->
+    <string name="level_title_0.1">Level 0.1</string>
 
 
 </resources>
