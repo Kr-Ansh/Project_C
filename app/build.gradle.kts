@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -44,6 +46,10 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-auth:21.3.0") // Mandatory for google sign in
 
+    val nav_version = "2.9.0" // Navigation component version
+    // Views/Fragments integration
+    implementation("androidx.navigation:navigation-fragment:$nav_version")
+    implementation("androidx.navigation:navigation-ui:$nav_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
