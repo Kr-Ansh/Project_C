@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.irons.projectc.chapters.Chapter0Activity
 import com.irons.projectc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         // Play button
         mainBinding.btnPlay.setOnClickListener {
-            val intent = Intent(this@MainActivity, GameActivity::class.java)
+            val intent = Intent(this@MainActivity, Chapter0Activity::class.java)
             startActivity(intent)
         }
 

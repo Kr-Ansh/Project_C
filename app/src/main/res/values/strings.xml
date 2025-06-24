@@ -23,11 +23,10 @@
     <string name="sign_out_button">Sign Out</string>
     <string name="exit_button">Exit</string>
 
-    <!--  Game Screen  -->
+    <string name="chapter_code_hint">Enter Your Code Here</string>
+    <!--  Chapter 0  -->
     <string name="next_button">Next</string>
     <string name="back_button">Back</string>
-
-    <!--  Chapter 0  -->
     <string name="chapter_title_0">Chapter 0</string>
     <string name="level_0.1">0.1</string>
     <string name="level_0.2">0.2</string>

@@ -15,9 +15,13 @@
         android:theme="@style/Base.Theme.ProjectC"
         tools:targetApi="31">
         <activity
-            android:name=".GameActivity"
+            android:name=".levels.Levels0Activity"
             android:exported="false"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".chapters.Chapter0Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"
