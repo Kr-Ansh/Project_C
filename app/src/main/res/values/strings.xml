@@ -23,10 +23,7 @@
     <string name="sign_out_button">Sign Out</string>
     <string name="exit_button">Exit</string>
 
-    <string name="chapter_code_hint">Enter Your Code Here</string>
     <!--  Chapter 0  -->
-    <string name="next_button">Next</string>
-    <string name="back_button">Back</string>
     <string name="chapter_title_0">Chapter 0</string>
     <string name="level_0.1">0.1</string>
     <string name="level_0.2">0.2</string>
@@ -35,6 +32,14 @@
 
     <!--  Level 0.1  -->
     <string name="level_title_0.1">Level 0.1</string>
+    <string name="level_description_0.1">Hello user!\nSince it’s your first chapter, I’ll go easy on you. Good luck for your first level!\nP.S. Details are important!</string>
+    <string name="level_question_0.1">What does the \'C\' stand for in Project C?</string>
+
+    <!--  Common  -->
+    <string name="chapter_code_hint">Enter Your Code Here</string>
+    <string name="submit_button">Submit</string>
+    <string name="back_button">Back</string>
+    <string name="next_button">Next</string>
 
 
 </resources>
