@@ -20,7 +20,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.irons.projectc.databinding.ActivityLoginBinding
 
 
@@ -32,6 +35,17 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
     //***************************************************************
+
+    //Firebase Database *****************************
+    private var database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private var usersRef: DatabaseReference = database.getReference("users")
+    //***********************************************
+
+    //******* User data ************
+    private var pendingUserName: String = ""
+    private var pendingUserEmail: String = ""
+    private var pendingUserDob: String = ""
+    //******************************
 
     //****** For DOB ***************
     var userDay = 0
@@ -66,9 +80,31 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         //****************Google Sign In**********************
         registerActivityForGoogleSignIn()
         loginBinding.buttonGoogleSignIn.setOnClickListener {
-            signInGoogle()
+
+            pendingUserName = loginBinding.userInputName.text.toString()
+            pendingUserEmail = loginBinding.userInputEmail.text.toString()
+            pendingUserDob = loginBinding.userInputDOB.text.toString()
+
+            if(pendingUserName.isEmpty() || pendingUserEmail.isEmpty() || pendingUserDob.isEmpty()) {
+                Toast.makeText(this@LoginActivity, R.string.empty_fields, Toast.LENGTH_SHORT).show()
+            } else {
+
+                signInGoogle()
+            }
         }
         //*****************************************************
+
+        //****************Facebook Sign In**********************
+        loginBinding.buttonFacebookSignIn.setOnClickListener {
+            Toast.makeText(this@LoginActivity, R.string.coming_soon, Toast.LENGTH_SHORT).show()
+        }
+        //******************************************************
+
+        //****************Anonymous Sign In**********************
+        loginBinding.buttonAnonymousSignIn.setOnClickListener {
+            Toast.makeText(this@LoginActivity, R.string.coming_soon, Toast.LENGTH_SHORT).show()
+        }
+        //******************************************************
     }
 
     //*********************** Google Sign In ***********************
@@ -80,11 +116,6 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
-        signIn()
-    }
-
-    private fun signIn() {
 
         val signInIntent: Intent = googleSignInClient.signInIntent
         activityResultLauncher.launch(signInIntent)
@@ -113,10 +144,6 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             val account: GoogleSignInAccount = task.getResult(ApiException::class.java)
             Toast.makeText(applicationContext, "Welcome to Clue.dicode", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-
             firebaseGoogleAccount(account)
         } catch (e: ApiException) {
             Toast.makeText(applicationContext, e.localizedMessage, Toast.LENGTH_SHORT).show()
@@ -129,9 +156,20 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         val authCredential = GoogleAuthProvider.getCredential(account.idToken, null)
         auth.signInWithCredential(authCredential).addOnCompleteListener { task ->
             if(task.isSuccessful) {
-                // val user = auth.currentUser We can get user info from this
+
+                val firebaseUser = auth.currentUser
+                if(firebaseUser != null) {
+                    saveDataToFirebase(firebaseUser, pendingUserName, pendingUserEmail, pendingUserDob)
+
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(baseContext, R.string.error_try_again, Toast.LENGTH_SHORT).show()
+                }
             } else {
 
+                Toast.makeText(baseContext, task.exception?.message, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -144,7 +182,7 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
         if(user != null) {
 
-            Toast.makeText(applicationContext, "Welcome to Clue.dicode", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, R.string.welcome_text, Toast.LENGTH_SHORT).show()
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -155,9 +193,31 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     // Date picker
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         userDay = dayOfMonth
-        userMonth = month
+        userMonth = month + 1
         userYear = year
 
         loginBinding.userInputDOB.setText("$userDay/$userMonth/$userYear")
+    }
+
+    // Saving Data to Database
+    private fun saveDataToFirebase(firebaseUser: FirebaseUser ,userName: String, userEmail: String, userDob: String) {
+
+        val userId = firebaseUser.uid
+
+        val userData = hashMapOf(
+            "userName" to userName,
+            "userEmail" to userEmail,
+            "userDob" to userDob
+        )
+
+        usersRef.child(userId).setValue(userData).addOnSuccessListener {
+
+            pendingUserName = ""
+            pendingUserEmail = ""
+            pendingUserDob = ""
+        }.addOnFailureListener { e ->
+            Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_LONG).show()
+            // Handle the error, maybe retry or log
+        }
     }
 }
