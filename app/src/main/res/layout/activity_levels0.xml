@@ -82,7 +82,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="70dp"
-            android:hint="@string/chapter_code_hint"
+            android:hint="@string/level_answer_hint"
             android:textColorHint="#8CFFFFFF"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusBottomEnd="10dp"
@@ -92,7 +92,7 @@
             app:boxStrokeWidth="2dp"
             app:cursorColor="@color/dark_gray"
             app:hintTextColor="#9AFFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent">
@@ -106,7 +106,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonSubmit"
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:layout_marginBottom="40dp"

@@ -37,6 +37,7 @@
 
     <!--  Common  -->
     <string name="chapter_code_hint">Enter Your Code Here</string>
+    <string name="level_answer_hint">Enter Your Answer Here</string>
     <string name="submit_button">Submit</string>
     <string name="back_button">Back</string>
     <string name="next_button">Next</string>
