@@ -32,8 +32,23 @@
 
     <!--  Level 0.1  -->
     <string name="level_title_0.1">Level 0.1</string>
-    <string name="level_description_0.1">Hello user!\nSince it’s your first chapter, I’ll go easy on you. Good luck for your first level!\nP.S. Details are important!</string>
+    <string name="level_description_0.1">Hello user!\nSince it’s your first chapter, I’ll go easy on you. Good luck for your first chapter!\nP.S. Details are important!</string>
     <string name="level_question_0.1">What does the \'C\' stand for in Project C?</string>
+
+    <!--  Level 0.2  -->
+    <string name="level_title_0.2">Level 0.2</string>
+    <string name="level_description_0.2">Congratulations on completing your first level!\nWhere do we use dots and dashes?\nP.S. You can use any tool you like. There are NO restrictions.</string>
+    <string name="level_question_0.2">.. -. - . .-. . ... - .. -. --. -....- -- --- .-. ... .</string>
+
+    <!--  Level 0.3  -->
+    <string name="level_title_0.3">Level 0.3</string>
+    <string name="level_description_0.3">I can see you\'re getting the hang of it — now, let\'s dive into a bit of history.</string>
+    <string name="level_question_0.3">A timeless tale of dharma, duty, and destruction — what’s the name of this epic?</string>
+
+    <!--  Level 0.4  -->
+    <string name="level_title_0.4">Level 0.4</string>
+    <string name="level_description_0.4">We’ve reached the end of Chapter 0.\nI\'ll see you again in the next one.\nP.S. Stay sharp and swift — blink, and you might miss it.</string>
+    <string name="level_question_0.4">What\'s the developer\'s username for this app?</string>
 
     <!--  Common  -->
     <string name="chapter_code_hint">Enter Your Code Here</string>
@@ -45,6 +60,11 @@
     <string name="welcome_text">Welcome to Clue.dicode</string>
     <string name="empty_fields">Please fill all the above fields</string>
     <string name="error_try_again">Error occurred, Please try again</string>
+    <string name="go_back_text">Correct answer, You can go back now.</string>
+    <string name="correct">Correct answer!</string>
+    <string name="incorrect">Incorrect answer!</string>
+    <string name="code_accepted">Code accepted!</string>
+    <string name="code_rejected">Code rejected!</string>
 
 
 </resources>

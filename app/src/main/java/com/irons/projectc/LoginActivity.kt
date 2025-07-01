@@ -159,7 +159,8 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
                 val firebaseUser = auth.currentUser
                 if(firebaseUser != null) {
-                    saveDataToFirebase(firebaseUser, pendingUserName, pendingUserEmail, pendingUserDob)
+//                    saveDataToFirebase(firebaseUser, pendingUserName, pendingUserEmail, pendingUserDob)
+                    checkAndRetrieveDataFromFirebase(firebaseUser, pendingUserName, pendingUserEmail, pendingUserDob)
 
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
@@ -171,6 +172,38 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
                 Toast.makeText(baseContext, task.exception?.message, Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    // Check if user data already exists in the database
+    private fun checkAndRetrieveDataFromFirebase(firebaseUser: FirebaseUser, newUserName: String, newUserEmail: String, newUserDob: String) {
+        val userId = firebaseUser.uid
+        val userRef = usersRef.child(userId)
+
+        userRef.get().addOnSuccessListener { dataSnapshot ->
+            if (dataSnapshot.exists()) {
+                // User data already exists, no need to save again (unless you want to merge)
+                Toast.makeText(applicationContext, "Welcome back!", Toast.LENGTH_SHORT).show()
+
+                // You can optionally retrieve and use the existing data if needed
+                // val existingUserName = dataSnapshot.child("userName").getValue(String::class.java)
+                // val existingUserEmail = dataSnapshot.child("userEmail").getValue(String::class.java)
+                // val existingUserDob = dataSnapshot.child("userDob").getValue(String::class.java)
+                // Log.d("FirebaseData", "Existing User: $existingUserName, $existingUserEmail, $existingUserDob")
+
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                // User data does not exist, save the new data
+                saveDataToFirebase(firebaseUser, newUserName, newUserEmail, newUserDob)
+            }
+        }.addOnFailureListener { exception ->
+            Toast.makeText(this, "Failed to check user data: ${exception.message}", Toast.LENGTH_LONG).show()
+            // Handle the error, maybe retry or log.
+            // For now, let's try to save the data anyway as a fallback,
+            // or you might want to prevent login.
+            saveDataToFirebase(firebaseUser, newUserName, newUserEmail, newUserDob)
         }
     }
 
@@ -215,6 +248,10 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             pendingUserName = ""
             pendingUserEmail = ""
             pendingUserDob = ""
+
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }.addOnFailureListener { e ->
             Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_LONG).show()
             // Handle the error, maybe retry or log

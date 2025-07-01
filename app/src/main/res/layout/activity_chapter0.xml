@@ -52,6 +52,7 @@
         <!--            app:layout_constraintStart_toStartOf="parent"-->
         <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etInputCode"
             android:layout_width="0dp"
@@ -59,6 +60,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
+            android:enabled="false"
             android:hint="@string/chapter_code_hint"
             android:textColorHint="#8CFFFFFF"
             app:boxBackgroundMode="outline"
@@ -107,6 +109,7 @@
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="292dp"
             android:layout_weight="1"
+            android:alpha="0.5"
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/orbitron"
             android:rotation="180"
@@ -126,6 +129,7 @@
             android:layout_marginStart="70dp"
             android:layout_marginBottom="292dp"
             android:layout_weight="1"
+            android:alpha="0.5"
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/orbitron"
             android:rotation="270"
@@ -146,6 +150,7 @@
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
+            android:alpha="0.5"
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/orbitron"
             android:rotation="90"

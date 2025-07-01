@@ -21,6 +21,11 @@ class Levels0Activity : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val ref = database.getReference("users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("stats")
 
+    val answer01 = "Clue.dicode"
+    val answer02 = "interesting-morse"
+    val answer03 = "mahabharata"
+    val answer04 = "KrAnsh"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,15 +37,73 @@ class Levels0Activity : AppCompatActivity() {
             insets
         }
 
-        levels0Binding.buttonSubmit.setOnClickListener {
+        var lvlNo = intent.getIntExtra("chapter0", 0)
 
-            if(levels0Binding.answerUserInput.text.toString() == "Clue.dicode"){
-                ref.child("lvl01stat").setValue(true)
-                Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show()
+        if(lvlNo == 1) {
+            levels0Binding.tvLevelTitle.setText(R.string.level_title_0_1)
+            levels0Binding.tvAboutLevel.setText(R.string.level_description_0_1)
+            levels0Binding.tvQuestion.setText(R.string.level_question_0_1)
+
+            levels0Binding.buttonSubmit.setOnClickListener {
+
+                if(levels0Binding.answerUserInput.text.toString().trim() == answer01){
+                    ref.child("lvl01stat").setValue(true)
+                    levels0Binding.tvAboutLevel.text = "Q"
+                    levels0Binding.tvQuestion.setText(R.string.go_back_text)
+                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
             }
+        } else if(lvlNo == 2) {
+            levels0Binding.tvLevelTitle.setText(R.string.level_title_0_2)
+            levels0Binding.tvAboutLevel.setText(R.string.level_description_0_2)
+            levels0Binding.tvQuestion.setText(R.string.level_question_0_2)
 
+            levels0Binding.buttonSubmit.setOnClickListener {
+
+                if(levels0Binding.answerUserInput.text.toString().lowercase().trim() == answer02){
+                    ref.child("lvl02stat").setValue(true)
+                    levels0Binding.tvAboutLevel.text = "Y"
+                    levels0Binding.tvQuestion.setText(R.string.go_back_text)
+                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else if(lvlNo == 3) {
+            levels0Binding.tvLevelTitle.setText(R.string.level_title_0_3)
+            levels0Binding.tvAboutLevel.setText(R.string.level_description_0_3)
+            levels0Binding.tvQuestion.setText(R.string.level_question_0_3)
+
+            levels0Binding.buttonSubmit.setOnClickListener {
+
+                if(levels0Binding.answerUserInput.text.toString().lowercase().trim() == answer03){
+                    ref.child("lvl03stat").setValue(true)
+                    levels0Binding.tvAboutLevel.text = "N"
+                    levels0Binding.tvQuestion.setText(R.string.go_back_text)
+                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else if(lvlNo == 4) {
+            levels0Binding.tvLevelTitle.setText(R.string.level_title_0_4)
+            levels0Binding.tvAboutLevel.setText(R.string.level_description_0_4)
+            levels0Binding.tvQuestion.setText(R.string.level_question_0_4)
+
+            levels0Binding.buttonSubmit.setOnClickListener {
+
+                if(levels0Binding.answerUserInput.text.toString().trim() == answer04){
+                    ref.child("lvl04stat").setValue(true)
+                    levels0Binding.tvAboutLevel.text = "Z"
+                    levels0Binding.tvQuestion.setText(R.string.go_back_text)
+                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+            }
         }
+
     }
 }

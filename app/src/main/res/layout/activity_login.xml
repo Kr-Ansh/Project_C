@@ -63,7 +63,8 @@
                 android:id="@+id/userInputName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textPersonName" />
+                android:inputType="text|textPersonName"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -95,7 +96,8 @@
                 android:id="@+id/userInputEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -127,7 +129,8 @@
                 android:id="@+id/userInputDOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View

@@ -42,6 +42,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="100dp"
+            android:enabled="false"
             android:hint="@string/chapter_code_hint"
             android:textColorHint="#8CFFFFFF"
             app:boxBackgroundMode="outline"
@@ -61,8 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
-                android:textSize="30sp"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="30sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -91,6 +92,7 @@
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="292dp"
             android:layout_weight="1"
+            android:alpha="0.5"
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/orbitron"
             android:rotation="180"
@@ -110,6 +112,7 @@
             android:layout_marginStart="70dp"
             android:layout_marginBottom="292dp"
             android:layout_weight="1"
+            android:alpha="0.5"
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/orbitron"
             android:rotation="270"
@@ -130,6 +133,7 @@
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="50dp"
             android:layout_weight="1"
+            android:alpha="0.5"
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/orbitron"
             android:rotation="90"
@@ -176,7 +180,7 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="34sp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:cornerRadius="10dp"
         app:icon="@drawable/outline_arrow_forward_ios_24"
         app:iconGravity="end"

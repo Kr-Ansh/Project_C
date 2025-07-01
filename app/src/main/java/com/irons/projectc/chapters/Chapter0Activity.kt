@@ -31,8 +31,9 @@ class Chapter0Activity : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
 
     private var userStatsListener: ValueEventListener? = null
-    private lateinit var userStatsRef: DatabaseReference // Reference to the "stats" node
+    private lateinit var userStatsRef: DatabaseReference
 
+    val chapter0Code = "QYNZ"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +52,38 @@ class Chapter0Activity : AppCompatActivity() {
 
         chapter0Binding.btn01.setOnClickListener {
             val intent = Intent(this@Chapter0Activity, Levels0Activity::class.java)
+            intent.putExtra("chapter0", 1)
             startActivity(intent)
         }
 
+        chapter0Binding.btn02.setOnClickListener {
+            val intent = Intent(this@Chapter0Activity, Levels0Activity::class.java)
+            intent.putExtra("chapter0", 2)
+            startActivity(intent)
+        }
+
+        chapter0Binding.btn03.setOnClickListener {
+            val intent = Intent(this@Chapter0Activity, Levels0Activity::class.java)
+            intent.putExtra("chapter0", 3)
+            startActivity(intent)
+        }
+
+        chapter0Binding.btn04.setOnClickListener {
+            val intent = Intent(this@Chapter0Activity, Levels0Activity::class.java)
+            intent.putExtra("chapter0", 4)
+            startActivity(intent)
+        }
+
+        chapter0Binding.btnNext.setOnClickListener {
+            val inputCode = chapter0Binding.chapter0CodeInput.text.toString().trim()
+
+            if(inputCode == chapter0Code) {
+                userStatsRef.child("ch0stat").setValue(true)
+                Toast.makeText(this, getString(R.string.code_accepted), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, getString(R.string.code_rejected), Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 
@@ -68,10 +98,6 @@ class Chapter0Activity : AppCompatActivity() {
     private fun attachUserStatsListener() {
         // Ensure user is logged in and userStatsRef is initialized
         if (!::userStatsRef.isInitialized) {
-            Log.w(
-                "Chapter0Activity",
-                "User not logged in or userStatsRef not initialized. Cannot attach listener."
-            )
             // Optionally, load from local or show login prompt
             loadStatsFromLocalAndUpdateUI() // Load local as fallback
             return
@@ -87,22 +113,13 @@ class Chapter0Activity : AppCompatActivity() {
                 if (snapshot.exists()) {
                     val stats = snapshot.value as? Map<String, Boolean>
                     if (stats != null) {
-                        Log.d("Chapter0Activity", "User stats updated from Firebase: $stats")
                         saveStatsLocally(stats)
                         updateUiWithStats(stats) // Create this function to update your UI
                     } else {
-                        Log.e(
-                            "Chapter0Activity",
-                            "Failed to parse stats from Firebase snapshot."
-                        )
                         // Potentially create default stats if parsing fails AND it's the first load
                         // Be careful not to overwrite good local data if this is just a transient parse error on an update
                     }
                 } else {
-                    Log.d(
-                        "Chapter0Activity",
-                        "No stats found in Firebase for this user. Creating defaults."
-                    )
                     // It's important that createDefaultStatsAndSaveLocally ALSO updates the UI
                     // or calls updateUiWithStats with the default values after saving.
                     createDefaultStatsAndSaveLocally(userStatsRef.parent) // pass the parent node (userRef)
@@ -110,11 +127,7 @@ class Chapter0Activity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.e(
-                    "Chapter0Activity",
-                    "Error listening to user stats: ",
-                    error.toException()
-                )
+
                 Toast.makeText(
                     this@Chapter0Activity,
                     "Error loading live data. Displaying local data.",
@@ -130,11 +143,10 @@ class Chapter0Activity : AppCompatActivity() {
     private fun loadStatsFromLocalAndUpdateUI() {
         val localStats = loadStatsFromLocal()
         if (localStats != null) {
-            Log.d("Chapter0Activity", "Using stats from local SharedPreferences.")
+
             updateUiWithStats(localStats)
         } else {
             // No local stats either, perhaps show some default state or an error
-            Log.d("Chapter0Activity", "No local stats found.")
             // You might want to create and display default stats for the UI even if Firebase is down
             val defaultStats = mapOf(
                 "ch0stat" to false, "lvl01stat" to false, "lvl02stat" to false,
@@ -208,8 +220,8 @@ class Chapter0Activity : AppCompatActivity() {
         }
 
         chapter0Binding.etInputCode.isEnabled = lvl04statValue
+        chapter0Binding.btnNext.isVisible = lvl04statValue
 
-        Log.d("Chapter0Activity", "UI updated with stats: $stats")
     }
 
     override fun onStop() {
@@ -241,15 +253,12 @@ class Chapter0Activity : AppCompatActivity() {
 
         actualStatsRef.setValue(defaultStats)
             .addOnSuccessListener {
-                Log.d("Chapter0Activity", "Default stats created in Firebase successfully.")
                 saveStatsLocally(defaultStats)
                 updateUiWithStats(defaultStats) // Important: Update UI with these defaults
             }
             .addOnFailureListener { e ->
-                Log.e("Chapter0Activity", "Error creating default stats in Firebase: ", e)
                 saveStatsLocally(defaultStats)
                 updateUiWithStats(defaultStats) // Still update UI with defaults locally
-                Log.w("Chapter0Activity", "Saved default stats locally despite Firebase error.")
                 Toast.makeText(
                     this,
                     "Failed to initialize user data online, using defaults.",
@@ -266,7 +275,6 @@ class Chapter0Activity : AppCompatActivity() {
             }
             apply() // Asynchronously saves the changes
         }
-        Log.d("Chapter0Activity", "Stats saved locally to SharedPreferences.")
     }
 
     private fun loadStatsFromLocal(): Map<String, Boolean>? {
@@ -289,10 +297,8 @@ class Chapter0Activity : AppCompatActivity() {
         }
 
         return if (hasAnyStat) {
-            Log.d("Chapter0Activity", "Stats loaded from SharedPreferences: $loadedStats")
             loadedStats
         } else {
-            Log.d("Chapter0Activity", "No stats found in SharedPreferences.")
             null // Or return an empty map if that makes more sense for your logic
         }
     }
