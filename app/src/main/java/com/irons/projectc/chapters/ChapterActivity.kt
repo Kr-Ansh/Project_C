@@ -34,13 +34,12 @@ class ChapterActivity : AppCompatActivity() {
     private var userStatsListener: ValueEventListener? = null
     private lateinit var userStatsRef: DatabaseReference
 
-    private val TOTAL_CHAPTERS = 3
+    private val TOTAL_CHAPTERS = 2
     private var currentChapterNo: Int = 0
 
     private val chapterUnlockCodes = mapOf(
         0 to "GOOD", // Chapter 0 code
-        1 to "NEXT", // Chapter 1 code - EXAMPLE
-        2 to "FINALCODE"  // Chapter 2 code - EXAMPLE
+//        1 to "NEXT", // Chapter 1 code - EXAMPLE
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,44 +78,52 @@ class ChapterActivity : AppCompatActivity() {
             val currentStats = loadStatsFromLocal()
             val isChapterMarkedCompletedInFirebase = currentStats?.get("ch${currentChapterNo}stat") ?: false
 
-            if(isChapterMarkedCompletedInFirebase) {
-
-                val nextChapterNo = currentChapterNo + 1
-                val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
-                intent.putExtra("chapterNo", nextChapterNo)
-                startActivity(intent)
-                finish()
+            if(currentChapterNo == TOTAL_CHAPTERS - 1) {
+                Toast.makeText(
+                    this@ChapterActivity,
+                    getString(R.string.congrats_message),
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
-                val inputCode = chapterBinding.chapterCodeInput.text.toString().trim()
-                val expectedCode = chapterUnlockCodes[currentChapterNo]
+                if (isChapterMarkedCompletedInFirebase) {
 
-                if (expectedCode != null && inputCode == expectedCode) {
-                    userStatsRef.child("ch${currentChapterNo}stat").setValue(true)
-                    Toast.makeText(this, getString(R.string.code_accepted), Toast.LENGTH_SHORT)
-                        .show()
-
-                    if (currentChapterNo < TOTAL_CHAPTERS - 1) {
-                        currentChapterNo++
-                        val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
-                        intent.putExtra("chapterNo", currentChapterNo)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        Toast.makeText(
-                            this,
-                            getString(R.string.congrats_message),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        val intent = Intent(this@ChapterActivity, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
+                    val nextChapterNo = currentChapterNo + 1
+                    val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
+                    intent.putExtra("chapterNo", nextChapterNo)
+                    startActivity(intent)
+                    finish()
                 } else {
-                    Toast.makeText(this, getString(R.string.code_rejected), Toast.LENGTH_SHORT)
-                        .show()
+                    val inputCode = chapterBinding.chapterCodeInput.text.toString().trim()
+                    val expectedCode = chapterUnlockCodes[currentChapterNo]
+
+                    if (expectedCode != null && inputCode == expectedCode) {
+                        userStatsRef.child("ch${currentChapterNo}stat").setValue(true)
+                        Toast.makeText(this, getString(R.string.code_accepted), Toast.LENGTH_SHORT)
+                            .show()
+
+                        if (currentChapterNo < TOTAL_CHAPTERS - 1) {
+                            currentChapterNo++
+                            val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
+                            intent.putExtra("chapterNo", currentChapterNo)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this,
+                                getString(R.string.congrats_message),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            val intent = Intent(this@ChapterActivity, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                    } else {
+                        Toast.makeText(this, getString(R.string.code_rejected), Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
             }
-        } // Next button is opening new chapters after end of all chapters
+        }
         chapterBinding.btnBack.setOnClickListener {
             currentChapterNo--;
 
@@ -245,10 +252,10 @@ class ChapterActivity : AppCompatActivity() {
         val lvl3statValue = stats["lvl${currentChapterNo}3stat"] ?: false
         val lvl4statValue = stats["lvl${currentChapterNo}4stat"] ?: false
 
-        chapterBinding.btnNext.isVisible = (lvl4statValue && currentChapterNo < TOTAL_CHAPTERS - 1)
+        chapterBinding.btnNext.isVisible = lvl4statValue
         chapterBinding.etInputCode.isEnabled = lvl4statValue
-        chapterBinding.btnBack.isVisible = currentChapterNo > 0
         chapterBinding.etInputCode.isVisible = currentChapterNo < TOTAL_CHAPTERS - 1
+        chapterBinding.btnBack.isVisible = currentChapterNo > 0
 
         val animator = AnimatorInflater.loadAnimator(
             this@ChapterActivity,

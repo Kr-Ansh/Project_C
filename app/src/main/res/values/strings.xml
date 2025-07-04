@@ -59,23 +59,23 @@
 
     <!--  Level 1.1  -->
     <string name="level_title_1.1">Level 1.1</string>
-    <string name="level_description_1.1">Hello user!\nSince it’s your first chapter, I’ll go easy on you. Good luck for your first chapter!\nP.S. Details are important!</string>
-    <string name="level_question_1.1">What does the \'C\' stand for in Project C?</string>
+    <string name="level_description_1.1">Welcome, user.\nYou\’ve entered Chapter 1. It\’s time to uncover the foundations of encryption — the first steps in a long, shadowed path.\nP.S. Shift your perspective — sometimes, the answer is just a few letters away.</string>
+    <string name="level_question_1.1">ZopmalkJhlzhyJpwoly</string>
 
     <!--  Level 1.2  -->
     <string name="level_title_1.2">Level 1.2</string>
-    <string name="level_description_1.2">Congratulations on completing your first level!\nWhere do we use dots and dashes?\nP.S. You can use any tool you like. There are NO restrictions.</string>
-    <string name="level_question_1.2">.. -. - . .-. . ... - .. -. --. -....- -- --- .-. ... .</string>
+    <string name="level_description_1.2">Read it backward, but not the way you think.</string>
+    <string name="level_question_1.2">IvevihvwZgyzhsXrksvi</string>
 
     <!--  Level 1.3  -->
     <string name="level_title_1.3">Level 1.3</string>
-    <string name="level_description_1.3">I can see you\'re getting the hang of it — now, let\'s dive into a bit of history.</string>
-    <string name="level_question_1.3">A timeless tale of dharma, duty, and destruction — what’s the name of this epic?</string>
+    <string name="level_description_1.3">What happened?\nIs it locked?\nHave you tried KEY?</string>
+    <string name="level_question_1.3">VsauElnOci</string>
 
     <!--  Level 1.4  -->
     <string name="level_title_1.4">Level 1.4</string>
-    <string name="level_description_1.4">We’ve reached the end of Chapter 0.\nI\'ll see you again in the next one.\nP.S. Stay sharp and swift — blink, and you might miss it.</string>
-    <string name="level_question_1.4">What\'s the developer\'s username for this app?</string>
+    <string name="level_description_1.4">This marks the end of Chapter 1 — but there are countless encryption techniques out there. Who knows what I’ll use next, or when?\nP.S. What if every flicker meant something?</string>
+    <string name="level_question_1.4">01000110 01110101 01101110 01101110 01111001 01000010 01101001 01110100 01110011</string>
 
     <!--  Chapter 2  -->
     <string name="chapter_title_2">Chapter 2</string>
@@ -86,23 +86,23 @@
 
     <!--  Level 2.1  -->
     <string name="level_title_2.1">Level 2.1</string>
-    <string name="level_description_2.1">important!</string>
-    <string name="level_question_2.1">What does the \'C\' stand for in Project C?</string>
+    <string name="level_description_2.1"></string>
+    <string name="level_question_2.1"></string>
 
     <!--  Level 2.2  -->
     <string name="level_title_2.2">Level 2.2</string>
-    <string name="level_description_2.2">Congratulations on completing your first level!\nWhere do we use dots and dashes?\nP.S. You can use any tool you like. There are NO restrictions.</string>
-    <string name="level_question_2.2">.. -. - . .-. . ... - .. -. --. -....- -- --- .-. ... .</string>
+    <string name="level_description_2.2"></string>
+    <string name="level_question_2.2"></string>
 
     <!--  Level 2.3  -->
     <string name="level_title_2.3">Level 2.3</string>
-    <string name="level_description_2.3">I can see you\'re getting the hang of it — now, let\'s dive into a bit of history.</string>
-    <string name="level_question_2.3">A timeless tale of dharma, duty, and destruction — what’s the name of this epic?</string>
+    <string name="level_description_2.3"></string>
+    <string name="level_question_2.3"></string>
 
     <!--  Level 2.4  -->
     <string name="level_title_2.4">Level 2.4</string>
-    <string name="level_description_2.4">We’ve reached the end of Chapter 0.\nI\'ll see you again in the next one.\nP.S. Stay sharp and swift — blink, and you might miss it.</string>
-    <string name="level_question_2.4">What\'s the developer\'s username for this app?</string>
+    <string name="level_description_2.4"></string>
+    <string name="level_question_2.4"></string>
 
     <!--  Common  -->
     <string name="chapter_code_hint">Enter Your Code Here</string>
@@ -119,7 +119,7 @@
     <string name="incorrect">Incorrect answer!</string>
     <string name="code_accepted">Code accepted!</string>
     <string name="code_rejected">Code rejected!</string>
-    <string name="congrats_message">All chapters are completed for now.</string>
+    <string name="congrats_message">All chapters are complete — for now.</string>
 
 
 </resources>

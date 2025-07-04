@@ -39,10 +39,10 @@ class LevelsActivity : AppCompatActivity() {
         LevelData(0, 4, R.string.level_title_0_4, R.string.level_description_0_4, R.string.level_question_0_4, "KrAnsh", "D"),
 
         // Chapter 1
-        LevelData(1, 1, R.string.level_title_1_1, R.string.level_description_1_1, R.string.level_question_1_1, "answer11", "N"),
-        LevelData(1, 2, R.string.level_title_1_2, R.string.level_description_1_2, R.string.level_question_1_2, "answer12", "E"),
-        LevelData(1, 3, R.string.level_title_1_3, R.string.level_description_1_3, R.string.level_question_1_3, "answer13", "X"),
-        LevelData(1, 4, R.string.level_title_1_4, R.string.level_description_1_4, R.string.level_question_1_4, "answer14", "T"),
+        LevelData(1, 1, R.string.level_title_1_1, R.string.level_description_1_1, R.string.level_question_1_1, "ShiftedCaesarCipher", "N"),
+        LevelData(1, 2, R.string.level_title_1_2, R.string.level_description_1_2, R.string.level_question_1_2, "ReversedAtbashCipher", "E"),
+        LevelData(1, 3, R.string.level_title_1_3, R.string.level_description_1_3, R.string.level_question_1_3, "LockAndKey", "X"),
+        LevelData(1, 4, R.string.level_title_1_4, R.string.level_description_1_4, R.string.level_question_1_4, "FunnyBits", "T"),
 
         // Chapter 2
         LevelData(2, 1, R.string.level_title_2_1, R.string.level_description_2_1, R.string.level_question_2_1, "answer21", "N"),
