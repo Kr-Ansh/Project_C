@@ -2,10 +2,13 @@ package com.irons.projectc.chapters
 
 import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -34,12 +37,12 @@ class ChapterActivity : AppCompatActivity() {
     private var userStatsListener: ValueEventListener? = null
     private lateinit var userStatsRef: DatabaseReference
 
-    private val TOTAL_CHAPTERS = 2
+    private val TOTAL_CHAPTERS = 3
     private var currentChapterNo: Int = 0
 
     private val chapterUnlockCodes = mapOf(
         0 to "GOOD", // Chapter 0 code
-//        1 to "NEXT", // Chapter 1 code - EXAMPLE
+        1 to "NEXT", // Chapter 1 code - EXAMPLE
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +55,27 @@ class ChapterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        /*
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                var showExitDialog = AlertDialog.Builder(this@ChapterActivity)
+
+                showExitDialog.setTitle("Exit Game")
+                showExitDialog.setPositiveButton("Go to Main Menu", DialogInterface.OnClickListener {
+                        dialog, which ->
+                    val intent = Intent(this@ChapterActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                })
+                showExitDialog.setNeutralButton("Yes", DialogInterface.OnClickListener {
+                        dialog, which ->
+                    finishAffinity()
+                })
+                showExitDialog.create().show()
+            }
+        })
+        */ // If u ever want to add dialog box or some custom action on pressing the device's back button
 
         currentChapterNo = intent.getIntExtra("chapterNo", 0)
 
@@ -75,6 +99,9 @@ class ChapterActivity : AppCompatActivity() {
         }
 
         chapterBinding.btnNext.setOnClickListener {
+
+            userStatsRef.child("ch${currentChapterNo}stat").setValue(false) // Fixed a bug where chapterStat is not saving for existing players
+
             val currentStats = loadStatsFromLocal()
             val isChapterMarkedCompletedInFirebase = currentStats?.get("ch${currentChapterNo}stat") ?: false
 
@@ -86,6 +113,8 @@ class ChapterActivity : AppCompatActivity() {
                 ).show()
             } else {
                 if (isChapterMarkedCompletedInFirebase) {
+
+                    userStatsRef.child("ch${currentChapterNo}stat").setValue(true)
 
                     val nextChapterNo = currentChapterNo + 1
                     val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
@@ -102,6 +131,9 @@ class ChapterActivity : AppCompatActivity() {
                             .show()
 
                         if (currentChapterNo < TOTAL_CHAPTERS - 1) {
+
+                            userStatsRef.child("ch${currentChapterNo}stat").setValue(true)
+
                             currentChapterNo++
                             val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
                             intent.putExtra("chapterNo", currentChapterNo)

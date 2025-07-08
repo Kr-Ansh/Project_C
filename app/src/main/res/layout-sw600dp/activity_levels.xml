@@ -13,12 +13,12 @@
         android:id="@+id/tvLevelTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:fontFamily="@font/orbitron"
         android:text="@string/level_title_0.1"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="86sp"
+        android:textSize="90sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -28,60 +28,73 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/levels_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvLevelTitle">
 
-        <TextView
-            android:id="@+id/tvAboutLevel"
+        <ScrollView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/tv_bg"
-            android:backgroundTint="#4B000000"
-            android:fontFamily="@font/orbitron"
-            android:gravity="center"
-            android:paddingStart="15dp"
-            android:paddingTop="20dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="20dp"
-            android:text="@string/level_description_0.1"
-            android:textColor="@color/white"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvQuestion"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:fontFamily="@font/orbitron"
-            android:gravity="center"
-            android:text="@string/level_question_0.1"
-            android:textColor="@color/white"
-            android:textIsSelectable="true"
-            android:textSize="34sp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:paddingTop="26dp"
             app:layout_constraintBottom_toTopOf="@+id/etInputAnswer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAboutLevel" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAboutLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/tv_bg"
+                    android:backgroundTint="#4B000000"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:paddingStart="18dp"
+                    android:paddingTop="25dp"
+                    android:paddingEnd="18dp"
+                    android:paddingBottom="25dp"
+                    android:text="@string/level_description_0.1"
+                    android:textColor="@color/white"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/tvQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="60dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:text="@string/level_question_0.1"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="34sp" />
+
+            </LinearLayout>
+        </ScrollView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etInputAnswer"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
             android:hint="@string/level_answer_hint"
             android:textColorHint="#8CFFFFFF"
             app:boxBackgroundMode="outline"
@@ -94,7 +107,6 @@
             app:hintTextColor="#9AFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -110,13 +122,13 @@
             android:id="@+id/buttonSubmit"
             android:layout_width="400dp"
             android:layout_height="100dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="60dp"
             android:backgroundTint="@color/black"
             android:fontFamily="@font/orbitron"
             android:text="@string/submit_button"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="48sp"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
