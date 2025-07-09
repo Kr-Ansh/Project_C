@@ -120,6 +120,8 @@
     <string name="code_accepted">Code accepted!</string>
     <string name="code_rejected">Code rejected!</string>
     <string name="congrats_message">All chapters are complete — for now.</string>
+    <string name="browser_title">Browser</string>
+    <string name="notes_title">Notes</string>
 
 
 </resources>

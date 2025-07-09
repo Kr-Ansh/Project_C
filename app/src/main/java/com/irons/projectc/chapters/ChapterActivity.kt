@@ -165,6 +165,12 @@ class ChapterActivity : AppCompatActivity() {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.slide_out_right)
             finish()
         }
+
+        chapterBinding.btnHome!!.setOnClickListener {
+            val intent = Intent(this@ChapterActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     override fun onStart() {

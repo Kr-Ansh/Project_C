@@ -152,8 +152,8 @@
         android:id="@+id/btnBack"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="70dp"
         android:backgroundTint="@color/gray"
         android:fontFamily="@font/orbitron"
         android:text="@string/back_button"
@@ -168,12 +168,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/circular_background"
+        android:padding="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNext"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="70dp"
         android:backgroundTint="@color/gray"
         android:fontFamily="@font/orbitron"
         android:text="@string/next_button"

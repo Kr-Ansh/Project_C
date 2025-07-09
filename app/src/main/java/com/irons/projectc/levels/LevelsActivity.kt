@@ -1,7 +1,9 @@
 package com.irons.projectc.levels
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.irons.projectc.R
+import com.irons.projectc.chapters.ChapterActivity
 import com.irons.projectc.databinding.ActivityLevelsBinding
 
 class LevelsActivity : AppCompatActivity() {
@@ -75,73 +78,14 @@ class LevelsActivity : AppCompatActivity() {
             handleSubmit()
         }
 
-/*
-//        if(lvlNo == "01") {
-//            levelsBinding.tvLevelTitle.setText(R.string.level_title_0_1)
-//            levelsBinding.tvAboutLevel.setText(R.string.level_description_0_1)
-//            levelsBinding.tvQuestion.setText(R.string.level_question_0_1)
-//
-//            levelsBinding.buttonSubmit.setOnClickListener {
-//
-//                if(levelsBinding.answerUserInput.text.toString().trim() == answer01){
-//                    ref.child("lvl01stat").setValue(true)
-//                    levelsBinding.tvAboutLevel.text = "G"
-//                    levelsBinding.tvQuestion.setText(R.string.go_back_text)
-//                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        } else if(lvlNo == "02") {
-//            levelsBinding.tvLevelTitle.setText(R.string.level_title_0_2)
-//            levelsBinding.tvAboutLevel.setText(R.string.level_description_0_2)
-//            levelsBinding.tvQuestion.setText(R.string.level_question_0_2)
-//
-//            levelsBinding.buttonSubmit.setOnClickListener {
-//
-//                if(levelsBinding.answerUserInput.text.toString().lowercase().trim() == answer02){
-//                    ref.child("lvl02stat").setValue(true)
-//                    levelsBinding.tvAboutLevel.text = "O"
-//                    levelsBinding.tvQuestion.setText(R.string.go_back_text)
-//                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        } else if(lvlNo == "03") {
-//            levelsBinding.tvLevelTitle.setText(R.string.level_title_0_3)
-//            levelsBinding.tvAboutLevel.setText(R.string.level_description_0_3)
-//            levelsBinding.tvQuestion.setText(R.string.level_question_0_3)
-//
-//            levelsBinding.buttonSubmit.setOnClickListener {
-//
-//                if(levelsBinding.answerUserInput.text.toString().lowercase().trim() == answer03){
-//                    ref.child("lvl03stat").setValue(true)
-//                    levelsBinding.tvAboutLevel.text = "O"
-//                    levelsBinding.tvQuestion.setText(R.string.go_back_text)
-//                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        } else if(lvlNo == "04") {
-//            levelsBinding.tvLevelTitle.setText(R.string.level_title_0_4)
-//            levelsBinding.tvAboutLevel.setText(R.string.level_description_0_4)
-//            levelsBinding.tvQuestion.setText(R.string.level_question_0_4)
-//
-//            levelsBinding.buttonSubmit.setOnClickListener {
-//
-//                if(levelsBinding.answerUserInput.text.toString().trim() == answer04){
-//                    ref.child("lvl04stat").setValue(true)
-//                    levelsBinding.tvAboutLevel.text = "D"
-//                    levelsBinding.tvQuestion.setText(R.string.go_back_text)
-//                    Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        }
- */
+        levelsBinding.btnWeb!!.setOnClickListener {
+            val intent = Intent(this@LevelsActivity, WebActivity::class.java)
+            startActivity(intent)
+        }
+        levelsBinding.btnNotes!!.setOnClickListener {
+            val intent = Intent(this@LevelsActivity, NotesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun loadLevelContent() {

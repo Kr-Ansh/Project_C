@@ -168,8 +168,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
         android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="30dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/gray"
         android:fontFamily="@font/orbitron"
@@ -184,11 +184,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="25dp"
+        android:src="@drawable/home_icon"
+        android:background="@drawable/circular_background"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNext"
         android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="30dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/gray"
         android:fontFamily="@font/orbitron"

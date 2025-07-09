@@ -7,4 +7,5 @@
     </style>
 
     <style name="Theme.ProjectC" parent="Base.Theme.ProjectC" />
-</resources>
+
+    </resources>

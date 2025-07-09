@@ -94,7 +94,7 @@
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="20dp"
             android:hint="@string/level_answer_hint"
             android:textColorHint="#8CFFFFFF"
             app:boxBackgroundMode="outline"
@@ -117,9 +117,21 @@
                 android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <ImageButton
+            android:id="@+id/btnNotes"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/circular_background"
+            android:src="@drawable/notes_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSubmit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white" />
+
         <Button
             android:id="@+id/buttonSubmit"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/black"
@@ -132,6 +144,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnWeb"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/circular_background"
+            android:src="?android:attr/actionModeWebSearchDrawable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonSubmit"
+            app:tint="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
