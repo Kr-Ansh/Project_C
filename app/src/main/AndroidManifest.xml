@@ -16,15 +16,18 @@
         android:theme="@style/Base.Theme.ProjectC"
         tools:targetApi="31">
         <activity
+            android:name=".mainScreen.AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".levels.NotesActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".levels.LevelsActivity"/>
+            android:parentActivityName=".levels.LevelsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".levels.WebActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".levels.LevelsActivity"/>
+            android:parentActivityName=".levels.LevelsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".levels.LevelsActivity"
             android:exported="false"
@@ -49,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".mainScreen.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

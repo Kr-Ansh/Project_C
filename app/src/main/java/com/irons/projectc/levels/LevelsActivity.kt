@@ -48,10 +48,10 @@ class LevelsActivity : AppCompatActivity() {
         LevelData(1, 4, R.string.level_title_1_4, R.string.level_description_1_4, R.string.level_question_1_4, "FunnyBits", "T"),
 
         // Chapter 2
-        LevelData(2, 1, R.string.level_title_2_1, R.string.level_description_2_1, R.string.level_question_2_1, "answer21", "N"),
-        LevelData(2, 2, R.string.level_title_2_2, R.string.level_description_2_2, R.string.level_question_2_2, "answer22", "E"),
-        LevelData(2, 3, R.string.level_title_2_3, R.string.level_description_2_3, R.string.level_question_2_3, "answer23", "X"),
-        LevelData(2, 4, R.string.level_title_2_4, R.string.level_description_2_4, R.string.level_question_2_4, "answer24", "T"),
+        LevelData(2, 1, R.string.level_title_2_1, R.string.level_description_2_1, R.string.level_question_2_1, "London", "N"),
+        LevelData(2, 2, R.string.level_title_2_2, R.string.level_description_2_2, R.string.level_question_2_2, "Taj Mahal", "O"),
+        LevelData(2, 3, R.string.level_title_2_3, R.string.level_description_2_3, R.string.level_question_2_3, "JR Suarez", "O"),
+        LevelData(2, 4, R.string.level_title_2_4, R.string.level_description_2_4, R.string.level_question_2_4, "Jimmie", "B"),
 
         // Add data for Chapter 2, Chapter 3, etc.
     )

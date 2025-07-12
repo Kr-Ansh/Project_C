@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/black"
+        android:fontFamily="@font/orbitron"
         android:gravity="center"
         android:paddingTop="10dp"
         android:text="@string/notes_title"
@@ -33,6 +34,7 @@
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:ems="10"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:textColor="@color/white"
@@ -41,6 +43,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNotesTitle"
-        tools:text="Dummy" />
+        android:hint="@string/notes_dummy_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

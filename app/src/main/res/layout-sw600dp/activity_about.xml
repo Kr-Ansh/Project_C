@@ -6,42 +6,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_gray"
-    tools:context=".levels.NotesActivity">
+    tools:context=".mainScreen.AboutActivity">
 
     <TextView
         android:id="@+id/tvNotesTitle"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="150dp"
         android:background="@color/black"
         android:gravity="center"
         android:paddingTop="10dp"
         android:fontFamily="@font/orbitron"
-        android:text="@string/notes_title"
+        android:text="@string/about_me_button"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etNotes"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        android:ems="10"
-        android:fontFamily="sans-serif-smallcaps"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNotesTitle"
-        android:hint="@string/notes_dummy_text"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvNotesTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAboutMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:text="@string/about_message"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

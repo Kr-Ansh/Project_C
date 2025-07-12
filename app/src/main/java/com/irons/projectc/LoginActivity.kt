@@ -25,6 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.irons.projectc.databinding.ActivityLoginBinding
+import com.irons.projectc.mainScreen.MainActivity
 
 
 class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {

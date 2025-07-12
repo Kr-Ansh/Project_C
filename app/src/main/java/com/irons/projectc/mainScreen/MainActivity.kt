@@ -1,4 +1,4 @@
-package com.irons.projectc
+package com.irons.projectc.mainScreen
 
 import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
@@ -12,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.irons.projectc.LoginActivity
+import com.irons.projectc.R
 import com.irons.projectc.chapters.ChapterActivity
 import com.irons.projectc.databinding.ActivityMainBinding
 
@@ -44,7 +46,8 @@ class MainActivity : AppCompatActivity() {
 
         // About me button
         mainBinding.btnAbout.setOnClickListener {
-            Toast.makeText(this, "Coming soon...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)
         }
 
         // Sign out button

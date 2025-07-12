@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.irons.projectc.MainActivity
+import com.irons.projectc.mainScreen.MainActivity
 import com.irons.projectc.R
 import com.irons.projectc.databinding.ActivityChapterBinding
 import com.irons.projectc.levels.LevelsActivity

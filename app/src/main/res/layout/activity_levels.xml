@@ -60,7 +60,7 @@
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/tv_bg"
                     android:backgroundTint="#4B000000"
-                    android:fontFamily="@font/orbitron"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="center"
                     android:paddingStart="8dp"
                     android:paddingTop="15dp"
@@ -78,8 +78,10 @@
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="50dp"
                     android:layout_marginBottom="40dp"
-                    android:fontFamily="@font/orbitron"
+                    android:autoLink="web"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="center"
+                    android:linksClickable="true"
                     android:text="@string/level_question_0.1"
                     android:textColor="@color/white"
                     android:textIsSelectable="true"
@@ -113,6 +115,7 @@
                 android:id="@+id/answerUserInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="sans-serif-smallcaps"
                 android:inputType="text"
                 android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
