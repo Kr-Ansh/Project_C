@@ -13,11 +13,9 @@ What to Expect -
 
 -> No Boundaries: You're free to use any tool or technique. If it helps you solve the level - it's fair game.
 
-🛠️ Built With -
+Built With -
 
 -> Kotlin
-
--> Jetpack Compose
 
 -> Android Studio
 
