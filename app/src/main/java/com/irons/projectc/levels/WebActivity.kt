@@ -34,6 +34,7 @@ class WebActivity : AppCompatActivity() {
             insets
         }
 
+        // So that google.com will only load on startup (as I was facing some bugs before)
         val sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         with(sharedPreferences.edit()) {
             putString(LAST_URL_KEY, "https://www.google.com/")
@@ -107,7 +108,6 @@ class WebActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         // Proper WebView cleanup to prevent memory leaks
-        // Detach WebView from its parent first
         (webBinding.webView.parent as? android.view.ViewGroup)?.removeView(webBinding.webView)
         webBinding.webView.destroy()
         super.onDestroy()
