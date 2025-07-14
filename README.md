@@ -1,28 +1,43 @@
-Project C, also known as Clue.dicode, is a mysterious and immersive Android puzzle game that invites players into a world of riddles, encryption, and hidden truths. Designed to challenge how you observe, think, and interact with the world around you, each level unfolds a new layer of curiosity and mental exploration.
+# 🔐 Project C — *Clue.dicode*
 
-This isn't just a game - it's an interactive story where there are no rules... just clues.
+**Project C**, also known as **Clue.dicode**, is a **mysterious and immersive Android puzzle game** that invites you into a world of **riddles, encryption, and hidden truths**. This isn't just a game — it's a **journey into curiosity**, where every level tests how you **observe**, **think**, and **connect the dots**.
 
-What to Expect - 
--> Progressive Levels: Each chapter is crafted around a unique theme - from basic encryption techniques like Caesar, Atbash, and Vigenère ciphers to advanced real-world concepts like Google Dorking.
+> 🎭 There are no rules... just clues.
 
--> Logic + Creativity: You'll need more than just tech skills - your wit, attention to detail, and creative thinking are your biggest assets.
+---
 
--> Built-in Browser & Notes: Use the integrated web browser and notes tool to search, save, and investigate without ever leaving the game.
+## 🧩 What to Expect
 
--> Your Clues, Your Way: Jot down anything important - the game won’t hold your hand, but it will leave breadcrumbs.
+### 🗂️ Progressive Chapters
+Each chapter is built around a unique theme — starting with **classic ciphers** like Caesar, Atbash, and Vigenère, and progressing to **real-world concepts** like **Google Dorking** and OSINT.
 
--> No Boundaries: You're free to use any tool or technique. If it helps you solve the level - it's fair game.
+### 🧠 Logic Meets Creativity  
+It’s not about how much you know — it’s about how cleverly you use what you find. Your biggest assets? **Wit, awareness, and creative problem-solving.**
 
-🛠️ Built With -
+### 🌐 Built-in Browser & Notes  
+Investigate clues using the **integrated browser** without leaving the game, and save what matters using a **handy notes tool**.
 
--> Kotlin
+### 📝 Your Clues, Your Way  
+No hand-holding here. Take notes, search the web, and find your own path forward. The game provides **breadcrumbs**, not answers.
 
--> Jetpack Compose
+### 🚫 No Boundaries  
+Use **any tool**, technique, or trick — if it helps you solve the level, it's **fair game**.
 
--> Android Studio
+---
 
--> Firebase (Realtime Database, Auth)
+## ⚙️ Built With
 
--> WebView
+- 💻 **Kotlin**
+- 🛠️ **Android Studio**
+- ☁️ **Firebase** (Realtime Database, Authentication)
+- 🌐 **WebView**
+- 🔐 **Google Sign-in**
 
--> Google Sign-in
+---
+
+## 📜 Privacy Policy
+
+View the full Privacy & Terms here:  
+👉 [Privacy Policy](https://www.privacypolicies.com/live/1c799520-8892-4d7b-89ec-464b31fe2db9)
+
+---
