@@ -44,11 +44,20 @@
     <string name="sign_out_button">Sign Out</string>
     <string name="exit_button">Exit</string>
 
-    <!--  Notes Activity  -->
+    <!--  Notes Screen  -->
     <string name="notes_title">Notes</string>
     <string name="notes_dummy_text">Feel free to write down anything you find important or worth remembering.\n
         Whether it\'s a clue, a pattern, or just a random thought - this space is yours.\n
         Sometimes, the smallest notes make the biggest difference.</string>
+
+    <!--  Settings Screen  -->
+    <string name="settings_title">Settings</string>
+    <string-array name="languages">
+        <item>English</item>
+    </string-array>
+    <string name="save_button">Save</string>
+    <string name="privacy_text">Privacy Policy</string>
+    <string name="terms_text">Terms of Use</string>
 
     <!--  Common  -->
     <string name="chapter_code_hint">Enter Your Code Here</string>
@@ -96,7 +105,7 @@
     <string name="level_description_0.3">You\'re catching on quickly.\n
         Now, it\'s time to journey deeper into something older than any cipher or puzzle. The past holds more than just stories, it holds truths wrapped in symbolism, loyalty, and chaos.\n
         What you uncover next has roots that reach far back, into a legacy shaped by choices and consequences.\n
-        P.S. If anything feels important, write it down, there\'s a built-in notes tool in the bottom-right corner, made just for that. And remember, you\'re never alone in this Google is your silent companion, ready when you are.</string>
+        P.S. If anything feels important, write it down, there\'s a built-in notes tool in the bottom-left corner, made just for that. And remember, you\'re never alone in this Google is your silent companion, ready when you are.</string>
     <string name="level_question_0.3">A timeless tale of dharma, duty, and destruction — what’s the name of this epic?</string>
 
     <!--  Level 0.4  -->

@@ -1,6 +1,7 @@
 package com.irons.projectc
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
@@ -186,11 +187,11 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
                 // User data already exists, no need to save again (unless you want to merge)
                 Toast.makeText(applicationContext, "Welcome back!", Toast.LENGTH_SHORT).show()
 
-                // You can optionally retrieve and use the existing data if needed
-                // val existingUserName = dataSnapshot.child("userName").getValue(String::class.java)
-                // val existingUserEmail = dataSnapshot.child("userEmail").getValue(String::class.java)
-                // val existingUserDob = dataSnapshot.child("userDob").getValue(String::class.java)
-                // Log.d("FirebaseData", "Existing User: $existingUserName, $existingUserEmail, $existingUserDob")
+                usersRef.child(FirebaseAuth.getInstance().currentUser!!.uid).child("userName").setValue(newUserName)
+                usersRef.child(FirebaseAuth.getInstance().currentUser!!.uid).child("userEmail").setValue(newUserEmail)
+                usersRef.child(FirebaseAuth.getInstance().currentUser!!.uid).child("userDob").setValue(newUserDob)
+
+                saveUserDataLocally(newUserName, newUserEmail, newUserDob)
 
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                 startActivity(intent)
@@ -202,8 +203,6 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         }.addOnFailureListener { exception ->
             Toast.makeText(this, "Failed to check user data: ${exception.message}", Toast.LENGTH_LONG).show()
             // Handle the error, maybe retry or log.
-            // For now, let's try to save the data anyway as a fallback,
-            // or you might want to prevent login.
             saveDataToFirebase(firebaseUser, newUserName, newUserEmail, newUserDob)
         }
     }
@@ -257,5 +256,15 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             Toast.makeText(this, "Failed to save user data: ${e.message}", Toast.LENGTH_LONG).show()
             // Handle the error, maybe retry or log
         }
+    }
+
+    // Saving user data locally
+    private fun saveUserDataLocally(userName: String, userEmail: String, userDob: String) {
+        val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putString("playerName", userName).apply()
+        editor.putString("playerEmail", userEmail).apply()
+        editor.putString("playerDOB", userDob).apply()
+        editor.apply()
     }
 }

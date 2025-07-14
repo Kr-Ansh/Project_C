@@ -1,10 +1,12 @@
 package com.irons.projectc.levels
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -93,7 +95,7 @@ class LevelsActivity : AppCompatActivity() {
 
         currentLevelData?.let { data ->
             levelsBinding.tvLevelTitle.setText(data.titleResId)
-            levelsBinding.tvAboutLevel.setText(data.descriptionResId)
+            levelsBinding.tvAboutLevel.text = getPersonalizedString(data.descriptionResId)
             levelsBinding.tvQuestion.setText(data.questionResId)
             levelsBinding.answerUserInput.setText("")
         }
@@ -115,4 +117,12 @@ class LevelsActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun Context.getPersonalizedString(@StringRes stringId: Int): String {
+        val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
+        val playerName = prefs.getString("playerName", "User")
+        val rawString = this.getString(stringId)
+        return rawString.replace("user", playerName ?: "User")
+    }
+
 }

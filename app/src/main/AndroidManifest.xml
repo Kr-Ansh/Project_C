@@ -16,6 +16,9 @@
         android:theme="@style/Base.Theme.ProjectC"
         tools:targetApi="31">
         <activity
+            android:name=".mainScreen.SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".mainScreen.AboutActivity"
             android:exported="false" />
         <activity
