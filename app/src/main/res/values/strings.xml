@@ -5,16 +5,19 @@
     <string name="about_message">Welcome, explorer.\n
         You\'ve just stepped into a world where nothing is handed to you and everything is waiting to be discovered. This game isn\'t just about solving puzzles. It\'s about paying attention. About thinking differently. About seeing the hidden in the obvious. Each level has been designed to challenge your logic, twist your assumptions, and reward your curiosity.\n
         Behind every chapter lies a new encryption method, a new way of thinking. From ancient scripts to digital whispers, every clue tells a story but only if you know how to listen.\n\n
-        <font size="20"><b><u>About Me</u></b></font>\n\n
+        <font size="20"><b><u>About Me</u></b></font>\n
+        <font color="#1e1e1e">Bbcf\.\.\. jebat bar gel ntnva</font>\n
         I\'m Kumar Ansh, a Computer Science Engineering student who\'s endlessly fascinated by puzzles, ciphers, and the strange thrill of solving things no one else sees. This game started as a passion project - something small - but it quickly turned into a canvas for all the weird and clever things I\'ve learned (and loved) along the way.\n
         I didn\'t build this just to entertain, I built it to challenge you. To make you think, doubt, discover, and most of all, enjoy the process of getting stuck and then unsticking yourself. Every level is a piece of something I found cool, confusing, or just plain fun and now it\'s your turn to make sense of it.\n
         You don\'t need to be an expert. You just need to be curious.\n\n
-        <font size="20"><b><u>One Last Thing\.\.\. <i>The Only Rule</i></u></b></font>\n\n
+        <font size="20"><b><u>One Last Thing\.\.\. <i>The Only Rule</i></u></b></font>\n
+        <font color="#1e1e1e">Cdsvv robo\.\.\. sxdobocdsxq</font>\n
         There are no rules.\n
         Not really. Not here.\n
         You won\'t find walkthroughs or glowing arrows. There are no limits to how you solve what\'s in front of you.\n\n
         Use Google. Use your notes. Use the built-in browser. Type wildly. Guess boldly. Think sideways. Whether it takes you ten seconds or ten hours, what matters is how you get there, not how fast.\n
-        If you\'re wondering what\'s allowed - the answer is\:\n\n
+        If you\'re wondering what\'s allowed - the answer is\:\n
+        <font color="#1e1e1e">Bwjpwopey</font>\n
         <i>Everything</i>.\n\n
         Thanks for playing.\n
         Now go break things.\n
@@ -56,6 +59,7 @@
         <item>English</item>
     </string-array>
     <string name="save_button">Save</string>
+    <string name="feedback_button">Send Feedback</string>
     <string name="privacy_text">Privacy Policy</string>
     <string name="terms_text">Terms of Use</string>
 
@@ -209,5 +213,62 @@
         And with that, Chapter 2 draws to a close.\n
         But remember - knowledge is scattered, not hidden. You just have to know where to look.</string>
     <string name="level_question_2.4">30.08603240871046, -97.14159820561514</string>
+
+    <!--  Chapter 3  -->
+    <string name="chapter_title_3">Chapter 3</string>
+    <string name="level_3.1">3.1</string>
+    <string name="level_3.2">3.2</string>
+    <string name="level_3.3">3.3</string>
+    <string name="level_3.4">3.4</string>
+
+    <!--  Level 3.1  -->
+    <string name="level_title_3.1">Level 3.1</string>
+    <string name="level_description_3.1">Welcome user.\n
+        You\'ve mastered ciphers, uncovered digital footprints\.\.\. but now the game looks back at you.\n
+        This chapter is different. It\'s not about what\'s out there - it\'s about where you\'re standing.\n
+        The puzzles won\'t just test your mind - they\'ll test how well you understand the space you\'re in.</string>
+    <string name="level_question_3.1">Let\'s begin simple.\n
+        You\'ve been reading between the lines\.\.\. but have you truly seen what\'s been written for you?\n
+        Somewhere in the words that told you who I am - I left something behind.\n
+        Not loud, not proud\.\.\. just there.</string>
+
+    <!--  Level 3.2  -->
+    <string name="level_title_3.2">Level 3.2</string>
+    <string name="level_description_3.2">The screen is silent.\n
+        No keys. No fields. No hints.\n
+        But your device is still listening\.\.\.\n\n
+        The question is - do you know how to speak its language?</string>
+    <string name="level_question_3.2">A tale of exile, loyalty, and divine duty. A golden deer, a stolen queen, and a battle to reclaim honor.\n
+        What is this ancient saga called?</string>
+
+    <!--  Level 3.3  -->
+    <string name="level_title_3.3">Level 3.3</string>
+    <string name="level_description_3.3">Sometimes the path forward\.\.\. is backward.\n
+        Not all answers lie ahead - some hide in plain sight, disguised as endings.\n
+        What feels like closure may, in fact, be the beginning of clarity.</string>
+    <string name="level_question_3.3">You walked away\.\.\. and yet found the answer.\n
+        Now tell me - what truth did the “end” reveal?</string>
+
+    <!--  Level 4.4  -->
+    <string name="level_title_3.4">Level 3.4</string>
+    <string name="level_description_3.4">You\'ve made it to the final level of Chapter 3 - and that calls for a celebration.\n
+        What better way to end a chapter than with a surprise?\n
+        Today, we celebrate your birthday\.\.\. or do we?\n
+        A gift awaits, but only if the stars align just right.</string>
+    <string name="level_question_3.4">🎉 Happy Birthday.\n
+        But let\'s be honest\.\.\. this isn\'t really about cake and candles, is it?\n
+        You thought you were solving me?\n
+        Following clues, cracking codes, winning levels?\n
+        I was studying you the whole time.\n\n
+        Your clicks.\n
+        Your pauses.\n
+        The button you almost pressed.\n\n
+        Chapter 3 wasn\'t about tricks.\n
+        It was about observation - mine, not yours.\n
+        And today, on the one day the world celebrates you,\n
+        I return the favor:\n\n
+        One last question\.\.\.\n
+        You gave me a name when we started. A username. Do you even remember it?\n
+        Or did I choose one for you when you weren\'t looking?</string>
 
 </resources>

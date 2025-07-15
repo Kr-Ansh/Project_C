@@ -37,12 +37,14 @@ class ChapterActivity : AppCompatActivity() {
     private var userStatsListener: ValueEventListener? = null
     private lateinit var userStatsRef: DatabaseReference
 
-    private val TOTAL_CHAPTERS = 3
+    private val TOTAL_CHAPTERS = 4
     private var currentChapterNo: Int = 0
 
     private val chapterUnlockCodes = mapOf(
         0 to "GOOD", // Chapter 0 code
-        1 to "NEXT", // Chapter 1 code - EXAMPLE
+        1 to "NEXT", // Chapter 1 code
+        2 to "NOOB", // Chapter 2 code
+        3 to "HEHE" // Chapter 3 code
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,27 +57,6 @@ class ChapterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        /*
-        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                var showExitDialog = AlertDialog.Builder(this@ChapterActivity)
-
-                showExitDialog.setTitle("Exit Game")
-                showExitDialog.setPositiveButton("Go to Main Menu", DialogInterface.OnClickListener {
-                        dialog, which ->
-                    val intent = Intent(this@ChapterActivity, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                })
-                showExitDialog.setNeutralButton("Yes", DialogInterface.OnClickListener {
-                        dialog, which ->
-                    finishAffinity()
-                })
-                showExitDialog.create().show()
-            }
-        })
-        */ // If u ever want to add dialog box or some custom action on pressing the device's back button
 
         currentChapterNo = intent.getIntExtra("chapterNo", 0)
 
@@ -166,9 +147,7 @@ class ChapterActivity : AppCompatActivity() {
             finish()
         }
 
-        chapterBinding.btnHome!!.setOnClickListener {
-            val intent = Intent(this@ChapterActivity, MainActivity::class.java)
-            startActivity(intent)
+        chapterBinding.btnHome.setOnClickListener {
             finish()
         }
     }
@@ -201,6 +180,13 @@ class ChapterActivity : AppCompatActivity() {
                 chapterBinding.btn2.setText(R.string.level_2_2)
                 chapterBinding.btn3.setText(R.string.level_2_3)
                 chapterBinding.btn4.setText(R.string.level_2_4)
+            }
+            3 -> {
+                chapterBinding.tvGameTitle.setText(R.string.chapter_title_3)
+                chapterBinding.btn1.setText(R.string.level_3_1)
+                chapterBinding.btn2.setText(R.string.level_3_2)
+                chapterBinding.btn3.setText(R.string.level_3_3)
+                chapterBinding.btn4.setText(R.string.level_3_4)
             }
         }
     }

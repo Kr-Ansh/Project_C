@@ -53,6 +53,13 @@ class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             startActivity(intent)
         }
 
+        binding.btnFeedback.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO)
+            intent.data = Uri.parse("mailto:")
+            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("kranshdev20@gmail.com"))
+            startActivity(intent)
+        }
+
         binding.btnSave.setOnClickListener {
             val newUsername = binding.etUsername.text.toString()
             val newDob = binding.etDob.text.toString()

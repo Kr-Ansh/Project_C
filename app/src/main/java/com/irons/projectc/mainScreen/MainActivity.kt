@@ -2,6 +2,7 @@ package com.irons.projectc.mainScreen
 
 import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -31,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putBoolean("isLevel3_3Entered", false).apply()
+        editor.putBoolean("isExitClicked", false).apply()
 
         // Play button
         mainBinding.btnPlay.setOnClickListener {
@@ -73,7 +79,12 @@ class MainActivity : AppCompatActivity() {
 
         // Exit button
         mainBinding.btnExit.setOnClickListener {
-            finishAffinity()
+            if(prefs.getBoolean("isLevel3_3Entered", false)) {
+                Toast.makeText(this, "Paradox", Toast.LENGTH_SHORT).show()
+                editor.putBoolean("isExitClicked", true).apply()
+            } else {
+                finishAffinity()
+            }
         }
     }
 
