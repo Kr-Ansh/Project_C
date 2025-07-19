@@ -37,14 +37,15 @@ class ChapterActivity : AppCompatActivity() {
     private var userStatsListener: ValueEventListener? = null
     private lateinit var userStatsRef: DatabaseReference
 
-    private val TOTAL_CHAPTERS = 4
+    private val TOTAL_CHAPTERS = 5
     private var currentChapterNo: Int = 0
 
     private val chapterUnlockCodes = mapOf(
         0 to "GOOD", // Chapter 0 code
         1 to "NEXT", // Chapter 1 code
         2 to "NOOB", // Chapter 2 code
-        3 to "HEHE" // Chapter 3 code
+        3 to "HEHE", // Chapter 3 code
+        4 to "EVIL" // Chapter 4 code
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -106,7 +107,7 @@ class ChapterActivity : AppCompatActivity() {
                     val inputCode = chapterBinding.chapterCodeInput.text.toString().trim()
                     val expectedCode = chapterUnlockCodes[currentChapterNo]
 
-                    if (expectedCode != null && inputCode == expectedCode) {
+                    if (expectedCode != null && inputCode.equals(expectedCode, ignoreCase = true)) {
                         userStatsRef.child("ch${currentChapterNo}stat").setValue(true)
                         Toast.makeText(this, getString(R.string.code_accepted), Toast.LENGTH_SHORT)
                             .show()
@@ -187,6 +188,13 @@ class ChapterActivity : AppCompatActivity() {
                 chapterBinding.btn2.setText(R.string.level_3_2)
                 chapterBinding.btn3.setText(R.string.level_3_3)
                 chapterBinding.btn4.setText(R.string.level_3_4)
+            }
+            4 -> {
+                chapterBinding.tvGameTitle.setText(R.string.chapter_title_4)
+                chapterBinding.btn1.setText(R.string.level_4_1)
+                chapterBinding.btn2.setText(R.string.level_4_2)
+                chapterBinding.btn3.setText(R.string.level_4_3)
+                chapterBinding.btn4.setText(R.string.level_4_4)
             }
         }
     }

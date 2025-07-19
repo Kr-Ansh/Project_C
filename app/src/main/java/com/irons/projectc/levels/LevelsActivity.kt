@@ -6,7 +6,6 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,6 @@ import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.irons.projectc.R
-import com.irons.projectc.chapters.ChapterActivity
 import com.irons.projectc.databinding.ActivityLevelsBinding
 import java.util.Calendar
 
@@ -65,6 +63,12 @@ class LevelsActivity : AppCompatActivity() {
         LevelData(3, 3, R.string.level_title_3_3, R.string.level_description_3_3, R.string.level_question_3_3, "Paradox", "H"),
         LevelData(3, 4, R.string.level_title_3_4, R.string.level_description_3_4, R.string.level_question_3_4, "user", "E"),
 
+        // Chapter 4
+        LevelData(4, 1, R.string.level_title_4_1, R.string.level_description_4_1, R.string.level_question_4_1, "Phantom", "E"),
+        LevelData(4, 2, R.string.level_title_4_2, R.string.level_description_4_2, R.string.level_question_4_2, "", "V"),
+        LevelData(4, 3, R.string.level_title_4_3, R.string.level_description_4_3, R.string.level_question_4_3, "", "I"),
+        LevelData(4, 4, R.string.level_title_4_4, R.string.level_description_4_4, R.string.level_question_4_4, "", "L"),
+
         // Add data for Chapters
     )
 
@@ -92,32 +96,15 @@ class LevelsActivity : AppCompatActivity() {
 
         loadLevelContent()
 
-        // Custom design for level 3.2
-        if(currentChapterNo == 3 && currentLevelNo == 2) levelsBinding.answerUserInput.isFocusable = false
-        else levelsBinding.answerUserInput.isFocusable = true
-
-        // Custom logic for level 3.3
-        if(currentChapterNo == 3 && currentLevelNo == 3) {
-            val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
-            val editor = prefs.edit()
-            editor.putBoolean("isLevel3_3Entered", true).apply()
-
-            levelsBinding.tvQuestion.isVisible = prefs.getBoolean("isExitClicked", false)
-        }
-
-        // Custom logic for level 3.4
-        if(currentChapterNo == 3 && currentLevelNo == 4) {
-            val prefs = getSharedPreferences("GamePrefs", MODE_PRIVATE)
-            val playerDob = prefs.getString("playerDOB", "0").toString()
-            if(!isTodayBirthday(playerDob)) levelsBinding.tvQuestion.text = "\uD83C\uDF81"
-        }
+        customLogicAndDesignForLevel(currentChapterNo, currentLevelNo)
 
         levelsBinding.buttonSubmit.setOnClickListener {
             handleSubmit()
         }
-        levelsBinding.btnWeb!!.setOnClickListener {
-            val intent = Intent(this@LevelsActivity, WebActivity::class.java)
-            startActivity(intent)
+        levelsBinding.btnHint!!.setOnClickListener {
+            Toast.makeText(this, "Hints\nComing soon...", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(this@LevelsActivity, HintActivity::class.java)
+//            startActivity(intent)
         }
         levelsBinding.btnNotes!!.setOnClickListener {
             val intent = Intent(this@LevelsActivity, NotesActivity::class.java)
@@ -249,5 +236,31 @@ class LevelsActivity : AppCompatActivity() {
         }
     }
 
+    // Custom logic or designs for specific levels
+    private fun customLogicAndDesignForLevel(chapterNo: Int, levelNo: Int) {
 
+        // Custom logic and design for level 3
+        if(currentChapterNo == 3) {
+            // Custom design for level 3.2
+            if (currentLevelNo == 2) levelsBinding.answerUserInput.isFocusable =
+                false
+            else levelsBinding.answerUserInput.isFocusable = true
+
+            // Custom logic for level 3.3
+            if (currentLevelNo == 3) {
+                val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
+                val editor = prefs.edit()
+                editor.putBoolean("isLevel3_3Entered", true).apply()
+
+                levelsBinding.tvQuestion.isVisible = prefs.getBoolean("isExitClicked", false)
+            }
+
+            // Custom logic for level 3.4
+            if (currentLevelNo == 4) {
+                val prefs = getSharedPreferences("GamePrefs", MODE_PRIVATE)
+                val playerDob = prefs.getString("playerDOB", "0").toString()
+                if (!isTodayBirthday(playerDob)) levelsBinding.tvQuestion.text = "\uD83C\uDF81"
+            }
+        }
+    }
 }

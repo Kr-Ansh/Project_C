@@ -149,12 +149,12 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnWeb"
+            android:id="@+id/btnHint"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/circular_background"
-            android:src="?android:attr/actionModeWebSearchDrawable"
+            android:src="@drawable/outline_question_mark_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonSubmit"

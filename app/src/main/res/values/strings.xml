@@ -63,6 +63,9 @@
     <string name="privacy_text">Privacy Policy</string>
     <string name="terms_text">Terms of Use</string>
 
+    <!--  Hints Screen  -->
+    <string name="hints_title">Hints</string>
+
     <!--  Common  -->
     <string name="chapter_code_hint">Enter Your Code Here</string>
     <string name="level_answer_hint">Enter Your Answer Here</string>
@@ -79,7 +82,6 @@
     <string name="code_accepted">Code accepted!</string>
     <string name="code_rejected">Code rejected!</string>
     <string name="congrats_message">All chapters are complete — for now.</string>
-    <string name="browser_title">Browser</string>
 
     <!--  Chapter 0  -->
     <string name="chapter_title_0">Chapter 0</string>
@@ -249,7 +251,7 @@
     <string name="level_question_3.3">You walked away\.\.\. and yet found the answer.\n
         Now tell me - what truth did the “end” reveal?</string>
 
-    <!--  Level 4.4  -->
+    <!--  Level 3.4  -->
     <string name="level_title_3.4">Level 3.4</string>
     <string name="level_description_3.4">You\'ve made it to the final level of Chapter 3 - and that calls for a celebration.\n
         What better way to end a chapter than with a surprise?\n
@@ -270,5 +272,55 @@
         One last question\.\.\.\n
         You gave me a name when we started. A username. Do you even remember it?\n
         Or did I choose one for you when you weren\'t looking?</string>
+
+    <!--  Chapter 4  -->
+    <string name="chapter_title_4">Chapter 4</string>
+    <string name="level_4.1">4.1</string>
+    <string name="level_4.2">4.2</string>
+    <string name="level_4.3">4.3</string>
+    <string name="level_4.4">4.4</string>
+
+    <string name="level_title_4.1">Level 4.1</string>
+    <string name="level_description_4.1">Welcome to Chapter 4.\n
+        You\'ve come a long way - decoding patterns, spotting fakes, and following trails. But now, it\'s time to bring everything you\'ve learned so far into one place.\n
+        This time, you\'re not given clues - you\'re given a story.\n\n
+        An ordinary-looking news article has surfaced online. It seems harmless. Maybe even boring. But those who know where to look\.\.\. know better.\n\n
+        Your task is simple - yet difficult: uncover the information hidden within.</string>
+    <string name="level_question_4.1"></string>
+
+    <string name="level_title_4.2">Level 4.2</string>
+    <string name="level_description_4.2"></string>
+    <string name="level_question_4.2"></string>
+
+    <string name="level_title_4.3">Level 4.3</string>
+    <string name="level_description_4.3"></string>
+    <string name="level_question_4.3"></string>
+
+    <string name="level_title_4.4">Level 4.4</string>
+    <string name="level_description_4.4"></string>
+    <string name="level_question_4.4"></string>
+
+    <!--  Chapter 5  -->
+    <string name="chapter_title_5">Chapter 5</string>
+<!--    <string name="level_4.1">4.1</string>-->
+<!--    <string name="level_4.2">4.2</string>-->
+<!--    <string name="level_4.3">4.3</string>-->
+<!--    <string name="level_4.4">4.4</string>-->
+
+<!--    <string name="level_title_4.1"></string>-->
+<!--    <string name="level_description_4.1"></string>-->
+<!--    <string name="level_question_4.1"></string>-->
+
+<!--    <string name="level_title_4.2"></string>-->
+<!--    <string name="level_description_4.2"></string>-->
+<!--    <string name="level_question_4.2"></string>-->
+
+<!--    <string name="level_title_4.3"></string>-->
+<!--    <string name="level_description_4.3"></string>-->
+<!--    <string name="level_question_4.3"></string>-->
+
+<!--    <string name="level_title_4.4"></string>-->
+<!--    <string name="level_description_4.4"></string>-->
+<!--    <string name="level_question_4.4"></string>-->
 
 </resources>
