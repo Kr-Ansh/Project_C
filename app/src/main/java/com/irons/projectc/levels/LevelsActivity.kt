@@ -65,9 +65,9 @@ class LevelsActivity : AppCompatActivity() {
 
         // Chapter 4
         LevelData(4, 1, R.string.level_title_4_1, R.string.level_description_4_1, R.string.level_question_4_1, "Phantom", "E"),
-        LevelData(4, 2, R.string.level_title_4_2, R.string.level_description_4_2, R.string.level_question_4_2, "", "V"),
-        LevelData(4, 3, R.string.level_title_4_3, R.string.level_description_4_3, R.string.level_question_4_3, "", "I"),
-        LevelData(4, 4, R.string.level_title_4_4, R.string.level_description_4_4, R.string.level_question_4_4, "", "L"),
+        LevelData(4, 2, R.string.level_title_4_2, R.string.level_description_4_2, R.string.level_question_4_2, "Alpha101", "V"),
+        LevelData(4, 3, R.string.level_title_4_3, R.string.level_description_4_3, R.string.level_question_4_3, "Delhi", "I"),
+        LevelData(4, 4, R.string.level_title_4_4, R.string.level_description_4_4, R.string.level_question_4_4, "The Oberoi Amarvilas", "L"),
 
         // Add data for Chapters
     )

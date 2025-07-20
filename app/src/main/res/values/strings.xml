@@ -175,7 +175,7 @@
         Your first task is simple\.\.\. or so it seems.\n
         You\'ll be given a link - an image. Your goal?\n
         <b>Find the name of the city it reveals.</b></string>
-    <string name="level_question_2.1">https://drive.google.com/file/d/13m9NqzXLboY8_ujQBdvvzkgop5k7BzMP/view?usp=sharing</string>
+    <string name="level_question_2.1">Image: https://drive.google.com/file/d/13m9NqzXLboY8_ujQBdvvzkgop5k7BzMP/view?usp=sharing</string>
 
     <!--  Level 2.2  -->
     <string name="level_title_2.2">Level 2.2</string>
@@ -187,7 +187,7 @@
         Your task:\n
         <b>Find the name of the building.</b>\n\n
         Don\'t just look. Investigate.</string>
-    <string name="level_question_2.2">https://drive.google.com/file/d/1-LF5O_wEUtFEaao8ShmqPPktsOUv79lw/view?usp=sharing</string>
+    <string name="level_question_2.2">Image: https://drive.google.com/file/d/1-LF5O_wEUtFEaao8ShmqPPktsOUv79lw/view?usp=sharing</string>
 
     <!--  Level 2.3  -->
     <string name="level_title_2.3">Level 2.3</string>
@@ -199,7 +199,7 @@
         Your task:\n
         <b>Find the photographer of this image.</b>\n\n
         The image speaks. You just have to ask the right questions.</string>
-    <string name="level_question_2.3">https://drive.google.com/file/d/1MfCze7KnjpYBrXPPH6PcrpktkKVNu_gf/view?usp=sharing</string>
+    <string name="level_question_2.3">Image: https://drive.google.com/file/d/1MfCze7KnjpYBrXPPH6PcrpktkKVNu_gf/view?usp=sharing</string>
 
     <!--  Level 2.4  -->
     <string name="level_title_2.4">Level 2.4</string>
@@ -286,41 +286,47 @@
         This time, you\'re not given clues - you\'re given a story.\n\n
         An ordinary-looking news article has surfaced online. It seems harmless. Maybe even boring. But those who know where to look\.\.\. know better.\n\n
         Your task is simple - yet difficult: uncover the information hidden within.</string>
-    <string name="level_question_4.1"></string>
+    <string name="level_question_4.1">News Article: https://kr-ansh.github.io/Project_C/app/src/main/res/assets/index</string>
 
     <string name="level_title_4.2">Level 4.2</string>
-    <string name="level_description_4.2"></string>
-    <string name="level_question_4.2"></string>
+    <string name="level_description_4.2">You\'ve stumbled across an archived forum thread from a long-forgotten underground board.\n
+        The thread appears quiet on the surface, filled with junk chatter, in-jokes, and digital paranoia.\n
+        But something\'s off. A few users\.\.\. they know more. Some of their posts don\'t match the noise—they speak in fragments, riddles, and encrypted trails.\n
+        There is a <b>secret code</b> embedded deep within this conversation. But the real signal is scattered across layers of misleading content, fake leads, and out-of-place encryption.\n\n
+        Find those who know.\n
+        Decode what they hide.\n
+        Piece it together.\n\n
+        The truth is not in plain text.</string>
+    <string name="level_question_4.2">Forum: https://kr-ansh.github.io/Project_C/app/src/main/res/assets/forum</string>
 
     <string name="level_title_4.3">Level 4.3</string>
-    <string name="level_description_4.3"></string>
-    <string name="level_question_4.3"></string>
+    <string name="level_description_4.3">A single photo. No caption. No tags.\n
+        But someone always leaves a trace.\n\n
+        Someone went on a trip. Your task is simple:\n
+        Find out where.\n\n
+        Everything else\.\.\. is up to how well you read between the data.</string>
+    <string name="level_question_4.3">Image: https://drive.google.com/file/d/1brGaFvFHHzG1abc_w1bxKbWsrf3jLZpe/view?usp=sharing</string>
 
     <string name="level_title_4.4">Level 4.4</string>
-    <string name="level_description_4.4"></string>
-    <string name="level_question_4.4"></string>
+    <string name="level_description_4.4">The final piece of Chapter 4 lies just overhead.\n
+        After everything you\'ve uncovered - metadata trails, encrypted fragments, OSINT breadcrumbs - you\'re now closer than ever.\n\n
+        This time, the task seems\.\.\. simple. You\'re provided a video. That\'s it.\n
+        No puzzles, no codes - just look closely.\n\n
+        Somewhere in that footage lies a clue - a hint overlooked by the casual observer.\n
+        A reflection in a window? A logo blurred in motion? A street sign flickering into frame?\n
+        You\'re not told what city it is, or when it was recorded. But your mission is clear:\n\n
+        <b>Find the name of the hotel.</b>\n\n
+        Solve this, and you\'ll have reached the gates of the endgame\n
+        <i>The final chapter, the last level</i>\n\n
+        Good luck, user.</string>
+    <string name="level_question_4.4">Video: https://drive.google.com/file/d/1fNmpa_zNHNGCQpP73i4tKf4Gv7NnuQ7w/view?usp=sharing</string>
 
     <!--  Chapter 5  -->
     <string name="chapter_title_5">Chapter 5</string>
-<!--    <string name="level_4.1">4.1</string>-->
-<!--    <string name="level_4.2">4.2</string>-->
-<!--    <string name="level_4.3">4.3</string>-->
-<!--    <string name="level_4.4">4.4</string>-->
+    <string name="final_level">End?</string>
 
-<!--    <string name="level_title_4.1"></string>-->
-<!--    <string name="level_description_4.1"></string>-->
-<!--    <string name="level_question_4.1"></string>-->
-
-<!--    <string name="level_title_4.2"></string>-->
-<!--    <string name="level_description_4.2"></string>-->
-<!--    <string name="level_question_4.2"></string>-->
-
-<!--    <string name="level_title_4.3"></string>-->
-<!--    <string name="level_description_4.3"></string>-->
-<!--    <string name="level_question_4.3"></string>-->
-
-<!--    <string name="level_title_4.4"></string>-->
-<!--    <string name="level_description_4.4"></string>-->
-<!--    <string name="level_question_4.4"></string>-->
+    <string name="final_level_title"></string>
+    <string name="final_level_description"></string>
+    <string name="final_level_question"></string>
 
 </resources>
