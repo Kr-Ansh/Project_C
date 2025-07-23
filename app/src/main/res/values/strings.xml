@@ -286,7 +286,7 @@
         This time, you\'re not given clues - you\'re given a story.\n\n
         An ordinary-looking news article has surfaced online. It seems harmless. Maybe even boring. But those who know where to look\.\.\. know better.\n\n
         Your task is simple - yet difficult: uncover the information hidden within.</string>
-    <string name="level_question_4.1">News Article: https://kr-ansh.github.io/Project_C/app/src/main/res/assets/index</string>
+    <string name="level_question_4.1">News Article: https://kr-ansh.github.io/Project_C/app/src/main/assests/index</string>
 
     <string name="level_title_4.2">Level 4.2</string>
     <string name="level_description_4.2">You\'ve stumbled across an archived forum thread from a long-forgotten underground board.\n
@@ -297,7 +297,7 @@
         Decode what they hide.\n
         Piece it together.\n\n
         The truth is not in plain text.</string>
-    <string name="level_question_4.2">Forum: https://kr-ansh.github.io/Project_C/app/src/main/res/assets/forum</string>
+    <string name="level_question_4.2">Forum: https://kr-ansh.github.io/Project_C/app/src/main/assests/forums</string>
 
     <string name="level_title_4.3">Level 4.3</string>
     <string name="level_description_4.3">A single photo. No caption. No tags.\n
@@ -322,11 +322,49 @@
     <string name="level_question_4.4">Video: https://drive.google.com/file/d/1fNmpa_zNHNGCQpP73i4tKf4Gv7NnuQ7w/view?usp=sharing</string>
 
     <!--  Chapter 5  -->
-    <string name="chapter_title_5">Chapter 5</string>
+    <string name="final_chapter_title">Chapter 5</string>
     <string name="final_level">End?</string>
 
-    <string name="final_level_title"></string>
-    <string name="final_level_description"></string>
-    <string name="final_level_question"></string>
+    <string name="final_level_title">Endgame</string>
+    <string name="final_level_description">Everything has led to this.\n
+        The paths you\'ve walked, the fragments you\'ve gathered, the puzzles you\'ve solved - none of it was random.\n
+        A question has been quietly forming behind the noise. And now, it demands an answer.\n\n
+        You\'re not starting something new.\n
+        You\'re finishing what began long ago.\n\n
+        Look deeper. Retrace your steps.\n
+        The truth was always with you.\n\n
+        Are you ready to remember?</string>
+    <string name="final_level_question_phase1">Some beginnings whisper, others blink - did you catch the blink?</string>
+    <string name="final_level_question_phase2">You thought you finished them - but some doors were only half open.\n
+        Chapters 1 to 4 are breathing again.\n
+        Find the anomalies.\n
+        Solve the questions.\n
+        Find the code.</string>
+    <string name="final_level_subquestion1_phase2_hint">Lveel 1.2</string>
+    <string name="final_level_subquestion2_phase2_hint">You\'ve learned how to trace locations and decode buildings. But now, let\'s shift the lens.\n
+        The story doesn\'t always lie in what\'s seen - sometimes, it\'s in who captured it.\n
+        This time, the image you\'re given holds more than just scenery.\n
+        Behind the frame is a pair of eyes\.\.\. a name\.\.\. a trace waiting to be found.\n
+        Search carefully - the credit belongs to someone.\n\n
+        Your task:\n
+        <b>Find the photographerrrrrrrrrrrrrrr of this image.</b>\n\n
+        The image speaks. You just have to ask the right questions.</string>
+    <string name="final_level_subquestion3_phase2_hint">Level 1.3</string>
+    <string name="final_level_subquestion4_phase2_hint">Vodio: https://drive.google.com/file/d/1fNmpa_zNHNGCQpP73i4tKf4Gv7NnuQ7w/view?usp=sharing</string>
+    <string name="final_level_question_phase3">The ending was hidden in your victories. Now give them voice.\n
+        Your final challenge: understand what the game has been quietly telling you all along.</string>
+
+    <!--  The End  -->
+    <string name="congrats">Congratulations</string>
+    <string name="final_message">You\'ve reached the end - or perhaps, the beginning.\n\n
+        Every breadcrumb, every glitch, every shadowed clue led you here.\n
+        You saw the patterns, cracked the layers, remembered the forgotten.\n\n
+        The answer was always waiting for the one who dared to look back.\n\n
+        Your journey is now complete.\n\n
+        All progress has been wiped. All traces erased.\n
+        Because the one who finishes this game\.\.\. was never meant to keep it.\n\n
+        If you wish to walk this path again -\n
+        you must start from the very beginning.\n
+        With nothing but your memory</string>
 
 </resources>

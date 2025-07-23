@@ -4,6 +4,7 @@ import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -35,8 +36,14 @@ class MainActivity : AppCompatActivity() {
 
         val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
         val editor = prefs.edit()
+        // Level 3
         editor.putBoolean("isLevel3_3Entered", false).apply()
         editor.putBoolean("isExitClicked", false).apply()
+        // Final level
+        editor.putBoolean("final_level_started", false).apply()
+        editor.putBoolean("phase1_completed", false).apply()
+        editor.putBoolean("phase2_completed", false).apply()
+        editor.putBoolean("phase3_completed", false).apply()
 
         // Play button
         mainBinding.btnPlay.setOnClickListener {
@@ -115,5 +122,14 @@ class MainActivity : AppCompatActivity() {
         val animator5 = AnimatorInflater.loadAnimator(this@MainActivity, R.animator.button_move_right) as ObjectAnimator
         animator5.target = mainBinding.btnExit
         animator5.start()
+
+
+        // UI update for final level
+        val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
+        if(prefs.getBoolean("final_level_started", false) && !prefs.getBoolean("phase1_completed", false)) {
+            mainBinding.tvMainTitle.text = "XYZABC"
+        } else {
+            mainBinding.tvMainTitle.setText(R.string.main_title)
+        }
     }
 }

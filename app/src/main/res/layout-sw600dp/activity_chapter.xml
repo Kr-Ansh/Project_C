@@ -149,6 +149,23 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFinal"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/final_level"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/dark_gray"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack"
         android:layout_width="300dp"
         android:layout_height="80dp"

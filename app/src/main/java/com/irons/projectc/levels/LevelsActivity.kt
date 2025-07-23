@@ -40,36 +40,37 @@ class LevelsActivity : AppCompatActivity() {
 
     private val allLevelsData = listOf(
         // Chapter 0
-        LevelData(0, 1, R.string.level_title_0_1, R.string.level_description_0_1, R.string.level_question_0_1, "Clue.dicode", "G"),
-        LevelData(0, 2, R.string.level_title_0_2, R.string.level_description_0_2, R.string.level_question_0_2, "interesting-morse", "O"),
-        LevelData(0, 3, R.string.level_title_0_3, R.string.level_description_0_3, R.string.level_question_0_3, "mahabharata", "O"),
-        LevelData(0, 4, R.string.level_title_0_4, R.string.level_description_0_4, R.string.level_question_0_4, "KrAnsh", "D"),
+        LevelData(0, 1, R.string.level_title_0_1, R.string.level_description_0_1, R.string.level_question_0_1, "Clue.dicode", ""),
+        LevelData(0, 2, R.string.level_title_0_2, R.string.level_description_0_2, R.string.level_question_0_2, "interesting-morse", "W"),
+        LevelData(0, 3, R.string.level_title_0_3, R.string.level_description_0_3, R.string.level_question_0_3, "mahabharata", "A"),
+        LevelData(0, 4, R.string.level_title_0_4, R.string.level_description_0_4, R.string.level_question_0_4, "KrAnsh", "S"),
 
         // Chapter 1
-        LevelData(1, 1, R.string.level_title_1_1, R.string.level_description_1_1, R.string.level_question_1_1, "ShiftedCaesarCipher", "N"),
-        LevelData(1, 2, R.string.level_title_1_2, R.string.level_description_1_2, R.string.level_question_1_2, "ReversedAtbashCipher", "E"),
-        LevelData(1, 3, R.string.level_title_1_3, R.string.level_description_1_3, R.string.level_question_1_3, "LockAndKey", "X"),
-        LevelData(1, 4, R.string.level_title_1_4, R.string.level_description_1_4, R.string.level_question_1_4, "FunnyBits", "T"),
+        LevelData(1, 1, R.string.level_title_1_1, R.string.level_description_1_1, R.string.level_question_1_1, "ShiftedCaesarCipher", "T"),
+        LevelData(1, 2, R.string.level_title_1_2, R.string.level_description_1_2, R.string.level_question_1_2, "ReversedAtbashCipher", "R"),
+        LevelData(1, 3, R.string.level_title_1_3, R.string.level_description_1_3, R.string.level_question_1_3, "LockAndKey", "U"),
+        LevelData(1, 4, R.string.level_title_1_4, R.string.level_description_1_4, R.string.level_question_1_4, "FunnyBits", "E"),
 
         // Chapter 2
-        LevelData(2, 1, R.string.level_title_2_1, R.string.level_description_2_1, R.string.level_question_2_1, "London", "N"),
-        LevelData(2, 2, R.string.level_title_2_2, R.string.level_description_2_2, R.string.level_question_2_2, "Taj Mahal", "O"),
-        LevelData(2, 3, R.string.level_title_2_3, R.string.level_description_2_3, R.string.level_question_2_3, "JR Suarez", "O"),
-        LevelData(2, 4, R.string.level_title_2_4, R.string.level_description_2_4, R.string.level_question_2_4, "Jimmie", "B"),
+        LevelData(2, 1, R.string.level_title_2_1, R.string.level_description_2_1, R.string.level_question_2_1, "London", ""),
+        LevelData(2, 2, R.string.level_title_2_2, R.string.level_description_2_2, R.string.level_question_2_2, "Taj Mahal", "M"),
+        LevelData(2, 3, R.string.level_title_2_3, R.string.level_description_2_3, R.string.level_question_2_3, "JR Suarez", "Y"),
+        LevelData(2, 4, R.string.level_title_2_4, R.string.level_description_2_4, R.string.level_question_2_4, "Jimmie", ""),
 
         // Chapter 3
-        LevelData(3, 1, R.string.level_title_3_1, R.string.level_description_3_1, R.string.level_question_3_1, "Fantastic", "H"),
-        LevelData(3, 2, R.string.level_title_3_2, R.string.level_description_3_2, R.string.level_question_3_2, ".-. .- -- .- -.-- .- -. .-", "E"),
-        LevelData(3, 3, R.string.level_title_3_3, R.string.level_description_3_3, R.string.level_question_3_3, "Paradox", "H"),
-        LevelData(3, 4, R.string.level_title_3_4, R.string.level_description_3_4, R.string.level_question_3_4, "user", "E"),
+        LevelData(3, 1, R.string.level_title_3_1, R.string.level_description_3_1, R.string.level_question_3_1, "Fantastic", "W"),
+        LevelData(3, 2, R.string.level_title_3_2, R.string.level_description_3_2, R.string.level_question_3_2, ".-. .- -- .- -.-- .- -. .-", "H"),
+        LevelData(3, 3, R.string.level_title_3_3, R.string.level_description_3_3, R.string.level_question_3_3, "Paradox", "A"),
+        LevelData(3, 4, R.string.level_title_3_4, R.string.level_description_3_4, R.string.level_question_3_4, "user", "T"),
 
         // Chapter 4
-        LevelData(4, 1, R.string.level_title_4_1, R.string.level_description_4_1, R.string.level_question_4_1, "Phantom", "E"),
-        LevelData(4, 2, R.string.level_title_4_2, R.string.level_description_4_2, R.string.level_question_4_2, "Alpha101", "V"),
-        LevelData(4, 3, R.string.level_title_4_3, R.string.level_description_4_3, R.string.level_question_4_3, "Delhi", "I"),
-        LevelData(4, 4, R.string.level_title_4_4, R.string.level_description_4_4, R.string.level_question_4_4, "The Oberoi Amarvilas", "L"),
+        LevelData(4, 1, R.string.level_title_4_1, R.string.level_description_4_1, R.string.level_question_4_1, "Phantom", "N"),
+        LevelData(4, 2, R.string.level_title_4_2, R.string.level_description_4_2, R.string.level_question_4_2, "Alpha101", "A"),
+        LevelData(4, 3, R.string.level_title_4_3, R.string.level_description_4_3, R.string.level_question_4_3, "Delhi", "M"),
+        LevelData(4, 4, R.string.level_title_4_4, R.string.level_description_4_4, R.string.level_question_4_4, "The Oberoi Amarvilas", "E"),
 
-        // Add data for Chapters
+        // Chapter 5
+        LevelData(5, 0, R.string.final_level_title, R.string.final_level_description, R.string.final_level_question_phase1, "Kumar Ansh", "Congratulations")
     )
 
     private var currentLevelData: LevelData? = null
@@ -99,7 +100,8 @@ class LevelsActivity : AppCompatActivity() {
         customLogicAndDesignForLevel(currentChapterNo, currentLevelNo)
 
         levelsBinding.buttonSubmit.setOnClickListener {
-            handleSubmit()
+            if(currentChapterNo == 5) endgame();
+            else handleSubmit()
         }
         levelsBinding.btnHint!!.setOnClickListener {
             Toast.makeText(this, "Hints\nComing soon...", Toast.LENGTH_SHORT).show()
@@ -120,6 +122,28 @@ class LevelsActivity : AppCompatActivity() {
             levelsBinding.tvAboutLevel.text = getPersonalizedString(data.descriptionResId)
             levelsBinding.tvQuestion.setText(data.questionResId)
             levelsBinding.answerUserInput.setText("")
+        }
+
+        val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
+        val editor = prefs.edit()
+
+        if(currentChapterNo == 5 && currentLevelNo == 0 && !prefs.getBoolean("phase1_completed", false)){
+            editor.putBoolean("final_level_started", true).apply()
+        }
+
+        if(prefs.getBoolean("phase1_completed", false) && !prefs.getBoolean("phase2_completed", false)) {
+            if (currentChapterNo == 1 && currentLevelNo == 2) {
+                levelsBinding.tvLevelTitle.setText(R.string.final_level_subquestion1_phase2_hint)
+            }
+            if (currentChapterNo == 2 && currentLevelNo == 3) {
+                levelsBinding.tvAboutLevel.setText(R.string.final_level_subquestion2_phase2_hint)
+            }
+            if (currentChapterNo == 3 && currentLevelNo == 1) {
+                levelsBinding.tvLevelTitle.setText(R.string.final_level_subquestion3_phase2_hint)
+            }
+            if (currentChapterNo == 4 && currentLevelNo == 4) {
+                levelsBinding.tvQuestion.setText(R.string.final_level_subquestion4_phase2_hint)
+            }
         }
     }
 
@@ -261,6 +285,75 @@ class LevelsActivity : AppCompatActivity() {
                 val playerDob = prefs.getString("playerDOB", "0").toString()
                 if (!isTodayBirthday(playerDob)) levelsBinding.tvQuestion.text = "\uD83C\uDF81"
             }
+        }
+    }
+
+    private fun endgame() {
+
+        val userSubmission = levelsBinding.answerUserInput.text.toString().trim()
+        var finalAnswer = currentLevelData?.correctAnswer
+
+        val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
+        val editor = prefs.edit()
+
+        if(userSubmission.equals("XYZABC", ignoreCase = true)) {
+            editor.putBoolean("phase1_completed", true).apply()
+            levelsBinding.tvQuestion.setText(R.string.final_level_question_phase2)
+            levelsBinding.answerUserInput.text?.clear()
+        } else if(userSubmission.equals("RYWE", ignoreCase = true) && prefs.getBoolean("phase1_completed", false)) {
+            editor.putBoolean("phase2_completed", true).apply()
+            levelsBinding.tvQuestion.setText(R.string.final_level_question_phase3)
+            levelsBinding.answerUserInput.text?.clear()
+        } else if(userSubmission.equals(finalAnswer, ignoreCase = true) && prefs.getBoolean("phase2_completed", false)) {
+
+            val statKey = "lvl${currentChapterNo}${currentLevelNo}stat"
+            ref.child(statKey).setValue(true).addOnSuccessListener {
+                levelsBinding.tvAboutLevel.text = currentLevelData!!.successMessageChar
+                levelsBinding.tvQuestion.setText(R.string.final_message)
+                Toast.makeText(this, getString(R.string.correct), Toast.LENGTH_SHORT).show()
+
+                // Resets all data
+                editor.clear().apply()
+                ref.child("ch0stat").setValue(false)
+                ref.child("ch1stat").setValue(false)
+                ref.child("ch2stat").setValue(false)
+                ref.child("ch3stat").setValue(false)
+                ref.child("ch4stat").setValue(false)
+                ref.child("lvl01stat").setValue(false)
+                ref.child("lvl02stat").setValue(false)
+                ref.child("lvl03stat").setValue(false)
+                ref.child("lvl04stat").setValue(false)
+                ref.child("lvl11stat").setValue(false)
+                ref.child("lvl12stat").setValue(false)
+                ref.child("lvl13stat").setValue(false)
+                ref.child("lvl14stat").setValue(false)
+                ref.child("lvl21stat").setValue(false)
+                ref.child("lvl22stat").setValue(false)
+                ref.child("lvl23stat").setValue(false)
+                ref.child("lvl24stat").setValue(false)
+                ref.child("lvl31stat").setValue(false)
+                ref.child("lvl32stat").setValue(false)
+                ref.child("lvl33stat").setValue(false)
+                ref.child("lvl34stat").setValue(false)
+                ref.child("lvl41stat").setValue(false)
+                ref.child("lvl42stat").setValue(false)
+                ref.child("lvl43stat").setValue(false)
+                ref.child("lvl44stat").setValue(false)
+                ref.child("lvl50stat").setValue(false)
+            }
+        } else {
+            Toast.makeText(this, getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
+        if(prefs.getBoolean("phase1_completed", false) && currentLevelNo == 0) {
+            levelsBinding.tvQuestion.setText(R.string.final_level_question_phase2)
+        }
+        if(prefs.getBoolean("phase2_completed", false) && currentLevelNo == 0) {
+            levelsBinding.tvQuestion.setText(R.string.final_level_question_phase3)
         }
     }
 }

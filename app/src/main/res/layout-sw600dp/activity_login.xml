@@ -183,31 +183,11 @@
             app:icon="@drawable/facbook"
             app:iconSize="50dp"
             app:iconTint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/buttonAnonymousSignIn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonGoogleSignIn" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonAnonymousSignIn"
-            android:layout_width="550dp"
-            android:layout_height="110dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/dark_gray"
-            android:fontFamily="@font/orbitron"
-            android:text="@string/anonymous_sign_in"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/outline_person_shield_24"
-            app:iconSize="50dp"
-            app:iconTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFacebookSignIn" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonGoogleSignIn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

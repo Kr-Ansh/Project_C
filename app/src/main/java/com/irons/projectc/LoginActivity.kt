@@ -101,12 +101,6 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             Toast.makeText(this@LoginActivity, R.string.coming_soon, Toast.LENGTH_SHORT).show()
         }
         //******************************************************
-
-        //****************Anonymous Sign In**********************
-        loginBinding.buttonAnonymousSignIn.setOnClickListener {
-            Toast.makeText(this@LoginActivity, R.string.coming_soon, Toast.LENGTH_SHORT).show()
-        }
-        //******************************************************
     }
 
     //*********************** Google Sign In ***********************

@@ -6,6 +6,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -37,15 +38,15 @@ class ChapterActivity : AppCompatActivity() {
     private var userStatsListener: ValueEventListener? = null
     private lateinit var userStatsRef: DatabaseReference
 
-    private val TOTAL_CHAPTERS = 5
+    private val TOTAL_CHAPTERS = 6 // Final chapter ui and logic will be added later
     private var currentChapterNo: Int = 0
 
-    private val chapterUnlockCodes = mapOf(
-        0 to "GOOD", // Chapter 0 code
-        1 to "NEXT", // Chapter 1 code
-        2 to "NOOB", // Chapter 2 code
-        3 to "HEHE", // Chapter 3 code
-        4 to "EVIL" // Chapter 4 code
+    private val chapterUnlockCodes = mapOf( // These codes are very important for the final chapter
+        0 to "WAS", // Chapter 0 code
+        1 to "TRUE", // Chapter 1 code
+        2 to "MY", // Chapter 2 code
+        3 to "WHAT", // Chapter 3 code
+        4 to "NAME" // Chapter 4 code
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +79,9 @@ class ChapterActivity : AppCompatActivity() {
         }
         chapterBinding.btn4.setOnClickListener {
             startLevelActivity(4)
+        }
+        chapterBinding.btnFinal.setOnClickListener {
+            startLevelActivity(0)
         }
 
         chapterBinding.btnNext.setOnClickListener {
@@ -196,6 +200,10 @@ class ChapterActivity : AppCompatActivity() {
                 chapterBinding.btn3.setText(R.string.level_4_3)
                 chapterBinding.btn4.setText(R.string.level_4_4)
             }
+            5 -> {
+                chapterBinding.tvGameTitle.setText(R.string.final_chapter_title)
+                chapterBinding.btnFinal.setText(R.string.final_level)
+            }
         }
     }
 
@@ -284,10 +292,25 @@ class ChapterActivity : AppCompatActivity() {
         val lvl3statValue = stats["lvl${currentChapterNo}3stat"] ?: false
         val lvl4statValue = stats["lvl${currentChapterNo}4stat"] ?: false
 
-        chapterBinding.btnNext.isVisible = lvl4statValue
+        chapterBinding.btnNext.isVisible = (lvl4statValue && currentChapterNo != TOTAL_CHAPTERS - 1)
         chapterBinding.etInputCode.isEnabled = lvl4statValue
         chapterBinding.etInputCode.isVisible = currentChapterNo < TOTAL_CHAPTERS - 1
         chapterBinding.btnBack.isVisible = currentChapterNo > 0
+
+        if(currentChapterNo == TOTAL_CHAPTERS - 1) {
+            chapterBinding.btn1.isVisible = false
+            chapterBinding.btn2.isVisible = false
+            chapterBinding.btn3.isVisible = false
+            chapterBinding.btn4.isVisible = false
+            chapterBinding.btnFinal.isVisible = true
+
+            val animator = AnimatorInflater.loadAnimator(
+                this@ChapterActivity,
+                R.animator.main_title_alpha
+            ) as ObjectAnimator
+            animator.target = chapterBinding.btnFinal
+            animator.start()
+        }
 
         val animator = AnimatorInflater.loadAnimator(
             this@ChapterActivity,
