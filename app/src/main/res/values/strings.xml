@@ -19,9 +19,8 @@
         If you\'re wondering what\'s allowed - the answer is\:\n
         <font color="#1e1e1e">Bwjpwopey</font>\n
         <i>Everything</i>.\n\n
-        Thanks for playing.\n
-        Now go break things.\n
-        - Kumar Ansh\n\n
+        <font size="20"><b><u>References &amp; Acknowledgments</u></b></font>\n
+        This game was built with inspiration and learning drawn from a variety of sources. Key references include Project VOID, TryHackMe.com, YouTube tutorials, and insights generated with the help of ChatGPT. Elements of real-world data have also been incorporated using publicly available resources such as Google Maps and Google Street View. These tools, platforms, and communities played a crucial role in shaping the puzzles, mechanics, and realism of the game experience. Deep respect and thanks go to the creators, educators, and communities that made this possible.\n\n
         Oh, and if you\'re here looking for the developer\'s username\.\.\.
         Nice try. This isn\'t the place. 😉</string>
 
@@ -65,6 +64,15 @@
 
     <!--  Hints Screen  -->
     <string name="hints_title">Hints</string>
+    <string name="tv_hint_1">Hint #1</string>
+    <string name="tv_hint_2">Hint #2</string>
+    <string name="tv_hint_3">Hint #3</string>
+    <string name="tv_hint_4">Hint #4</string>
+    <string name="tv_hint_5">Hint #5</string>
+    <string name="tv_answer">Show Answer #1</string>
+    <string name="tv_answer2">Show Answer #2</string>
+    <string name="tv_answer3">Show Answer #3</string>
+    <string name="btn_showAd">Show Ad</string>
 
     <!--  Common  -->
     <string name="chapter_code_hint">Enter Your Code Here</string>
@@ -95,16 +103,21 @@
     <string name="level_description_0.1">Hello, user!\nWelcome to Chapter 0,\n
         Since it\'s your very first step into the game, I\'ll go easy on you.\n
         This chapter is designed to be simple and beginner friendly, giving you a chance to get comfortable with how everything works.\n
-        Pay close attention though, even the basics can hide clever tricks.</string>
+        Pay close attention though, even the basics can hide clever tricks.\n
+        Stuck for too long need an hint? Tap onto the bottom-right hints button.</string>
     <string name="level_question_0.1">What does the \'C\' stand for in Project C?</string>
+    <string name="level_0.1_hint">Have you checked the home screen?</string>
+    <string name="level_0.1_answer">Clue.dicode</string>
 
     <!--  Level 0.2  -->
     <string name="level_title_0.2">Level 0.2</string>
     <string name="level_description_0.2">Impressive, you\'ve passed the first test.\n
         But don\'t get comfortable, that was only the beginning.\n
         Tell me, do those dots and dashes remind you of something ancient? Something whispered across time? You\'ve seen them before, maybe in the shadows of old war rooms, or encoded messages only few could read.\n
-        P.S. You\'re not bound by rules here. The answers are out there, use Google, search far and wide. There\'s even a browser waiting for you in the bottom-right corner. Tap into it. Uncover what\'s hidden.</string>
+        P.S. You\'re not bound by rules here. The answers are out there, use Google, search far and wide.</string>
     <string name="level_question_0.2">.. -. - . .-. . ... - .. -. --. -....- -- --- .-. ... .</string>
+    <string name="level_0.2_hint">Try searching for morse code on Google.</string>
+    <string name="level_0.2_answer">interesting-morse</string>
 
     <!--  Level 0.3  -->
     <string name="level_title_0.3">Level 0.3</string>
@@ -112,7 +125,9 @@
         Now, it\'s time to journey deeper into something older than any cipher or puzzle. The past holds more than just stories, it holds truths wrapped in symbolism, loyalty, and chaos.\n
         What you uncover next has roots that reach far back, into a legacy shaped by choices and consequences.\n
         P.S. If anything feels important, write it down, there\'s a built-in notes tool in the bottom-left corner, made just for that. And remember, you\'re never alone in this Google is your silent companion, ready when you are.</string>
-    <string name="level_question_0.3">A timeless tale of dharma, duty, and destruction — what’s the name of this epic?</string>
+    <string name="level_question_0.3">A timeless tale of dharma, duty, and destruction — what\'s the name of this epic?</string>
+    <string name="level_0.3_hint">Have you tried searching it on Google?</string>
+    <string name="level_0.3_answer">mahabharata</string>
 
     <!--  Level 0.4  -->
     <string name="level_title_0.4">Level 0.4</string>
@@ -121,6 +136,8 @@
         The next chapters won\'t wait for hesitation.\n
         P.S. Stay sharp and swift - blink, and you might miss something that matters.</string>
     <string name="level_question_0.4">What\'s the developer\'s username for this app?</string>
+    <string name="level_0.4_hint">Have you ever heard of splash screen?</string>
+    <string name="level_0.4_answer">KrAnsh</string>
 
     <!--  Chapter 1  -->
     <string name="chapter_title_1">Chapter 1</string>
@@ -137,12 +154,18 @@
         Prepare to twist symbols, shift meanings, and unlock what others overlook.\n
         P.S. Shift your perspective - sometimes, the truth is just a few letters away.</string>
     <string name="level_question_1.1">ZopmalkJhlzhyJpwoly</string>
+    <string name="level_1.1_hint">Try looking for encryption technique that involves shifting letters.</string>
+    <string name="level_1.1_hint2">Search for Caesar Cipher decrypter.</string>
+    <string name="level_1.1_answer">ShiftedCaesarCipher</string>
 
     <!--  Level 1.2  -->
     <string name="level_title_1.2">Level 1.2</string>
     <string name="level_description_1.2">Read it backward, but not the way you think.\n
         This isn\'t just a matter of flipping letters or reversing words. The real meaning hides behind a deeper kind of reflection. Think in patterns, not just direction. What looks familiar, might not be.</string>
     <string name="level_question_1.2">IvevihvwZgyzhsXrksvi</string>
+    <string name="level_1.2_hint">Try looking for encryption technique that involves reversing letters in a certain way.</string>
+    <string name="level_1.2_hint2">Search for Atbash Cipher decrypter.</string>
+    <string name="level_1.2_answer">ReversedAtbashCipher</string>
 
     <!--  Level 1.3  -->
     <string name="level_title_1.3">Level 1.3</string>
@@ -151,6 +174,9 @@
         Is it locked? Maybe. But locks often hide in plain sight.\n
         Have you tried the KEY?\nNot just any key, the real one. Look closely. It may not be spelled the way you expect but it\'s there.</string>
     <string name="level_question_1.3">VsauElnOci</string>
+    <string name="level_1.3_hint">Try looking for encryption techniques that requires a key.</string>
+    <string name="level_1.3_hint2">Search for Vigenère Cipher decrypter.</string>
+    <string name="level_1.3_answer">LockAndKey</string>
 
     <!--  Level 1.4  -->
     <string name="level_title_1.4">Level 1.4</string>
@@ -158,6 +184,9 @@
         But don\'t get too comfortable. You\'ve only just scratched the surface of the encrypted world. There are countless techniques out there - some simple, others deeply obscure. You never know what might come next or when it might appear.\n
         P.S. What if every flicker, every blink, every quiet switch between 1s and 0s meant something? Would you see the message hidden in the noise?</string>
     <string name="level_question_1.4">01000110 01110101 01101110 01101110 01111001 01000010 01101001 01110100 01110011</string>
+    <string name="level_1.4_hint">Try looking for encryption techniques that involves only 0 and 1.</string>
+    <string name="level_1.4_hint2">Search for Binary decoder.</string>
+    <string name="level_1.4_answer">FunnyBits</string>
 
     <!--  Chapter 2  -->
     <string name="chapter_title_2">Chapter 2</string>
@@ -176,6 +205,9 @@
         You\'ll be given a link - an image. Your goal?\n
         <b>Find the name of the city it reveals.</b></string>
     <string name="level_question_2.1">Image: https://drive.google.com/file/d/13m9NqzXLboY8_ujQBdvvzkgop5k7BzMP/view?usp=sharing</string>
+    <string name="level_2.1_hint">Have you looked closely?</string>
+    <string name="level_2.1_hint2">Try searching where is that station location.</string>
+    <string name="level_2.1_answer">London</string>
 
     <!--  Level 2.2  -->
     <string name="level_title_2.2">Level 2.2</string>
@@ -188,6 +220,9 @@
         <b>Find the name of the building.</b>\n\n
         Don\'t just look. Investigate.</string>
     <string name="level_question_2.2">Image: https://drive.google.com/file/d/1-LF5O_wEUtFEaao8ShmqPPktsOUv79lw/view?usp=sharing</string>
+    <string name="level_2.2_hint">Do you know any tool which can be used for searching images?</string>
+    <string name="level_2.2_hint2">Try Google Lens on this image.</string>
+    <string name="level_2.2_answer">Taj Mahal</string>
 
     <!--  Level 2.3  -->
     <string name="level_title_2.3">Level 2.3</string>
@@ -200,6 +235,10 @@
         <b>Find the photographer of this image.</b>\n\n
         The image speaks. You just have to ask the right questions.</string>
     <string name="level_question_2.3">Image: https://drive.google.com/file/d/1MfCze7KnjpYBrXPPH6PcrpktkKVNu_gf/view?usp=sharing</string>
+    <string name="level_2.3_hint">Search for the exact location where this picture was taken.</string>
+    <string name="level_2.3_hint2">Use Google Maps to find the location.</string>
+    <string name="level_2.3_hint3">Under the Photos section of Google Maps you can find the photographer of every image.</string>
+    <string name="level_2.3_answer">JR Suarez</string>
 
     <!--  Level 2.4  -->
     <string name="level_title_2.4">Level 2.4</string>
@@ -215,6 +254,11 @@
         And with that, Chapter 2 draws to a close.\n
         But remember - knowledge is scattered, not hidden. You just have to know where to look.</string>
     <string name="level_question_2.4">30.08603240871046, -97.14159820561514</string>
+    <string name="level_2.4_hint">Does these numbers remind you of coordinates?</string>
+    <string name="level_2.4_hint2">Try putting these numbers in Google Maps, don\'t forget to enable satellite view.</string>
+    <string name="level_2.4_hint3">You might have to zoom out a bit and you might see a name.</string>
+    <string name="level_2.4_hint4">Try Googling for the first name.</string>
+    <string name="level_2.4_answer">Jimmie</string>
 
     <!--  Chapter 3  -->
     <string name="chapter_title_3">Chapter 3</string>
@@ -233,6 +277,10 @@
         You\'ve been reading between the lines\.\.\. but have you truly seen what\'s been written for you?\n
         Somewhere in the words that told you who I am - I left something behind.\n
         Not loud, not proud\.\.\. just there.</string>
+    <string name="level_3.1_hint">Where do you thing I\'ve told you about me?</string>
+    <string name="level_3.1_hint2">Look inside the &quot;About Me&quot; section in the home screen.</string>
+    <string name="level_3.1_hint3">Try selecting the words and you might come across some hidden words.</string>
+    <string name="level_3.1_answer">Fantastic</string>
 
     <!--  Level 3.2  -->
     <string name="level_title_3.2">Level 3.2</string>
@@ -242,6 +290,11 @@
         The question is - do you know how to speak its language?</string>
     <string name="level_question_3.2">A tale of exile, loyalty, and divine duty. A golden deer, a stolen queen, and a battle to reclaim honor.\n
         What is this ancient saga called?</string>
+    <string name="level_3.2_hint">Is there any other way of inputting data in the device?</string>
+    <string name="level_3.2_hint2">You might want to change your volume.\nDouble click volume up = space\nDouble click volume down = backspace\nVolume up = -\nVolume down = .</string>
+    <string name="level_3.2_hint3">For the question simply search it on google.</string>
+    <string name="level_3.2_hint4">Try to put the answer in morse code.</string>
+    <string name="level_3.2_answer">.-. .- -- .- -.-- .- -. .-</string>
 
     <!--  Level 3.3  -->
     <string name="level_title_3.3">Level 3.3</string>
@@ -250,6 +303,9 @@
         What feels like closure may, in fact, be the beginning of clarity.</string>
     <string name="level_question_3.3">You walked away\.\.\. and yet found the answer.\n
         Now tell me - what truth did the “end” reveal?</string>
+    <string name="level_3.3_hint">&quot;Closure&quot;, &quot;Endings&quot; these words must mean something right?</string>
+    <string name="level_3.3_hint2">Go back to the home screen and press the &quot;Exit&quot; button.</string>
+    <string name="level_3.3_answer">Paradox</string>
 
     <!--  Level 3.4  -->
     <string name="level_title_3.4">Level 3.4</string>
@@ -272,6 +328,10 @@
         One last question\.\.\.\n
         You gave me a name when we started. A username. Do you even remember it?\n
         Or did I choose one for you when you weren\'t looking?</string>
+    <string name="level_3.4_hint">Is there any way you can change your birthday or maybe change the date?</string>
+    <string name="level_3.4_hint2">Go to &quot;Settings&quot; in home screen and change your D.O.B. to today\'s date.</string>
+    <string name="level_3.4_hint3">Enter your username.</string>
+    <string name="level_3.4_answer">user</string>
 
     <!--  Chapter 4  -->
     <string name="chapter_title_4">Chapter 4</string>
@@ -287,6 +347,11 @@
         An ordinary-looking news article has surfaced online. It seems harmless. Maybe even boring. But those who know where to look\.\.\. know better.\n\n
         Your task is simple - yet difficult: uncover the information hidden within.</string>
     <string name="level_question_4.1">News Article: https://kr-ansh.github.io/Project_C/app/src/main/assests/index</string>
+    <string name="level_4.1_hint">Try clicking on images, there captions might contain some clue.</string>
+    <string name="level_4.1_hint2">Those flags might mean something, try searching it on Google Lens.</string>
+    <string name="level_4.1_hint3">Have you checked in the details section of the image, it might have been renamed.</string>
+    <string name="level_4.1_hint4">Use flag semaphores and the original name of the image to decode the password of the pdf.</string>
+    <string name="level_4.1_answer">Phantom</string>
 
     <string name="level_title_4.2">Level 4.2</string>
     <string name="level_description_4.2">You\'ve stumbled across an archived forum thread from a long-forgotten underground board.\n
@@ -298,6 +363,10 @@
         Piece it together.\n\n
         The truth is not in plain text.</string>
     <string name="level_question_4.2">Forum: https://kr-ansh.github.io/Project_C/app/src/main/assests/forums</string>
+    <string name="level_4.2_hint">It feels like after every 10 min they are talking about something.</string>
+    <string name="level_4.2_hint2">You might need to use multiple decryption tools some might be familiar to you some might be new?</string>
+    <string name="level_4.2_hint3">Try using ChatGPT for finding the right tool for decoding.</string>
+    <string name="level_4.2_answer">Alpha101</string>
 
     <string name="level_title_4.3">Level 4.3</string>
     <string name="level_description_4.3">A single photo. No caption. No tags.\n
@@ -306,6 +375,12 @@
         Find out where.\n\n
         Everything else\.\.\. is up to how well you read between the data.</string>
     <string name="level_question_4.3">Image: https://drive.google.com/file/d/1brGaFvFHHzG1abc_w1bxKbWsrf3jLZpe/view?usp=sharing</string>
+    <string name="level_4.3_hint">Sometimes important data can be found from the meta data of an image.</string>
+    <string name="level_4.3_hint2">Try using online meta data viewers and you might the name to whom this image belong.</string>
+    <string name="level_4.3_hint3">Search Krista Clint on Facebook.</string>
+    <string name="level_4.3_hint4">Go to his blog and open his Instagram id.</string>
+    <string name="level_4.3_hint5">Try searching where it was 52.9C on that date.</string>
+    <string name="level_4.3_answer">Delhi</string>
 
     <string name="level_title_4.4">Level 4.4</string>
     <string name="level_description_4.4">The final piece of Chapter 4 lies just overhead.\n
@@ -320,6 +395,10 @@
         <i>The final chapter, the last level</i>\n\n
         Good luck, user.</string>
     <string name="level_question_4.4">Video: https://drive.google.com/file/d/1fNmpa_zNHNGCQpP73i4tKf4Gv7NnuQ7w/view?usp=sharing</string>
+    <string name="level_4.4_hint">Observe the video closely.</string>
+    <string name="level_4.4_hint2">You can see a building in distance, try searching that building.</string>
+    <string name="level_4.4_hint3">Check on Google Maps for the hotel near Taj Mahal.</string>
+    <string name="level_4.4_answer">The Oberoi Amarvilas</string>
 
     <!--  Chapter 5  -->
     <string name="final_chapter_title">Chapter 5</string>
@@ -353,6 +432,14 @@
     <string name="final_level_subquestion4_phase2_hint">Vodio: https://drive.google.com/file/d/1fNmpa_zNHNGCQpP73i4tKf4Gv7NnuQ7w/view?usp=sharing</string>
     <string name="final_level_question_phase3">The ending was hidden in your victories. Now give them voice.\n
         Your final challenge: understand what the game has been quietly telling you all along.</string>
+    <string name="level_5.0_hint">Go the very beginning i.e. the home screen, there must be a blinking text</string>
+    <string name="level_5.0_hint2">There must be some minor anomaly in one level of each chapter.</string>
+    <string name="level_5.0_hint3">The levels are: 1.2, 2.3, 3.1, 4.4\nJust input the letters you are receiving after solving these levels.</string>
+    <string name="level_5.0_hint4">You were receiving a code upon each chapter completion, try rearranging them to form meaningful sentence.</string>
+    <string name="level_5.0_hint5">Find my Name, it must be somewhere in the about section of the home screen.</string>
+    <string name="level_5.0_answer">XYZABC</string>
+    <string name="level_5.0_answer2">RYWE</string>
+    <string name="level_5.0_answer3">Kumar Ansh</string>
 
     <!--  The End  -->
     <string name="congrats">Congratulations</string>

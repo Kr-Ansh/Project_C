@@ -104,12 +104,15 @@ class LevelsActivity : AppCompatActivity() {
             else handleSubmit()
         }
         levelsBinding.btnHint!!.setOnClickListener {
-            Toast.makeText(this, "Hints\nComing soon...", Toast.LENGTH_SHORT).show()
-//            val intent = Intent(this@LevelsActivity, HintActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this@LevelsActivity, HintActivity::class.java)
+            intent.putExtra("currentChapterNo", currentChapterNo)
+            intent.putExtra("currentLevelNo", currentLevelNo)
+            startActivity(intent)
         }
         levelsBinding.btnNotes!!.setOnClickListener {
             val intent = Intent(this@LevelsActivity, NotesActivity::class.java)
+            intent.putExtra("currentChapterNo", currentChapterNo)
+            intent.putExtra("currentLevelNo", currentLevelNo)
             startActivity(intent)
         }
     }
