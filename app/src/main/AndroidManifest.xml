@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- For apps targeting Android 13 or higher & GMA SDK version 20.3.0 or lower -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
         android:allowBackup="true"
@@ -60,6 +63,11 @@
             android:name=".mainScreen.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713, My AdMob app ID: ca-app-pub-1262945574886048~1592171236 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
 
     </application>
 

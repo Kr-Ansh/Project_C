@@ -8,14 +8,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.OnUserEarnedRewardListener
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.irons.projectc.R
 import com.irons.projectc.databinding.ActivityHintBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class HintActivity : AppCompatActivity() {
 
     lateinit var hintBinding: ActivityHintBinding
 
-    var adsCount = 0
+    var rewardedAd: RewardedAd ?= null
+    var adsCount = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +39,8 @@ class HintActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        loadAds()
 
         hintBinding.btnBack.setOnClickListener {
             finish()
@@ -41,9 +55,64 @@ class HintActivity : AppCompatActivity() {
 
         loadHints(currentChapterNo, currentLevelNo)
 
-        hintBinding.btnShowAd?.setOnClickListener {
-            adsCount += 1
+        hintBinding.btnShowAd?.setOnClickListener { // Code for Ads logic
+
+            rewardedAd?.show(
+                this,
+                OnUserEarnedRewardListener { rewardItem ->
+                    // Handle the reward.
+                    adsCount += 1
+                    Toast.makeText(this@HintActivity, "Ads Viewed: $adsCount",
+                        Toast.LENGTH_SHORT).show()
+                },
+            )
+            rewardedAd?.fullScreenContentCallback =
+                object : FullScreenContentCallback() {
+                    override fun onAdDismissedFullScreenContent() {
+                        // Called when ad is dismissed
+                        loadAds()
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                        // Called when ad fails to show
+                        Toast.makeText(this@HintActivity, "Some error occurred, Please try again later\nAds Viewed: $adsCount",
+                            Toast.LENGTH_SHORT).show()
+                        rewardedAd = null
+                    }
+
+                    override fun onAdShowedFullScreenContent() {
+                        // Called when fullscreen content is shown.
+                    }
+
+                    override fun onAdImpression() {
+                        // Called when an impression is recorded for an ad.
+                    }
+
+                    override fun onAdClicked() {
+                        // Called when an ad is clicked.
+                    }
+                }
         }
+    }
+
+    fun loadAds() {
+        RewardedAd.load( // dummy adUnitId = "ca-app-pub-3940256099942544/5224354917", my adUnitId = "ca-app-pub-1262945574886048/5642047133"
+            this,
+            "ca-app-pub-3940256099942544/5224354917",
+            AdRequest.Builder().build(),
+            object : RewardedAdLoadCallback() {
+                override fun onAdLoaded(ad: RewardedAd) {
+                    rewardedAd = ad
+                }
+
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    // Handle the error
+                    Toast.makeText(this@HintActivity, "Some error occurred, Please try again later\nAds Viewed: $adsCount",
+                        Toast.LENGTH_SHORT).show()
+                    rewardedAd = null
+                }
+            },
+        )
     }
 
     private fun loadHints(currentChapterNo: Int, currentLevelNo: Int) {

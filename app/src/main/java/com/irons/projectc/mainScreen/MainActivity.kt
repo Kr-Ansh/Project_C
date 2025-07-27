@@ -5,12 +5,16 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +22,9 @@ import com.irons.projectc.LoginActivity
 import com.irons.projectc.R
 import com.irons.projectc.chapters.ChapterActivity
 import com.irons.projectc.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        CoroutineScope(Dispatchers.IO).launch {
+            // Initialize the Google Mobile Ads SDK on a background thread.
+            MobileAds.initialize(this@MainActivity) {}
+        }
+
         val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
         val editor = prefs.edit()
         // Level 3
@@ -47,6 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         // Play button
         mainBinding.btnPlay.setOnClickListener {
+            if(!isNetworkAvailable(this)) {
+                Toast.makeText(this@MainActivity, "No internet connection detected.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             val intent = Intent(this@MainActivity, ChapterActivity::class.java)
             intent.putExtra("chapterNo", 0)
             startActivity(intent)
@@ -54,6 +70,10 @@ class MainActivity : AppCompatActivity() {
 
         // Settings button
         mainBinding.btnSettings.setOnClickListener {
+            if(!isNetworkAvailable(this)) {
+                Toast.makeText(this@MainActivity, "No internet connection detected.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             val intent = Intent(this@MainActivity, SettingsActivity::class.java)
             startActivity(intent)
         }
@@ -130,6 +150,25 @@ class MainActivity : AppCompatActivity() {
             mainBinding.tvMainTitle.text = "XYZABC"
         } else {
             mainBinding.tvMainTitle.setText(R.string.main_title)
+        }
+    }
+
+    fun isNetworkAvailable(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                else -> false
+            }
+        } else {
+            @Suppress("DEPRECATION")
+            val networkInfo = connectivityManager.activeNetworkInfo ?: return false
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnected
         }
     }
 }

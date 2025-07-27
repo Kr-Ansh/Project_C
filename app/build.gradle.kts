@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.irons.projectc"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.irons.projectc"
@@ -43,6 +43,8 @@ android {
 dependencies {
 
     implementation("com.google.android.gms:play-services-auth:21.3.0") // Mandatory for google sign in
+
+    implementation("com.google.android.gms:play-services-ads:24.5.0") // For Rewarded ads
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

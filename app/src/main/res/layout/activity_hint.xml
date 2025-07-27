@@ -175,6 +175,7 @@
         android:fontFamily="@font/orbitron"
         android:text="@string/btn_showAd"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:backgroundTint="@color/gray"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
