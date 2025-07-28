@@ -34,12 +34,10 @@ class SplashActivity : AppCompatActivity() {
 
         // Delay for 5 seconds
         val handler = Handler(Looper.getMainLooper())
-        handler.postDelayed(object: Runnable {
-            override fun run() {
-                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
+        handler.postDelayed({
+            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }, 5000)
     }
 }

@@ -4,7 +4,6 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
-import android.net.Uri
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.activity.OnBackPressedCallback
@@ -17,6 +16,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.irons.projectc.R
 import com.irons.projectc.databinding.ActivitySettingsBinding
+import androidx.core.net.toUri
 
 class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
@@ -44,18 +44,19 @@ class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
         binding.tvPrivacy.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.privacypolicies.com/live/1c799520-8892-4d7b-89ec-464b31fe2db9")
+            intent.data =
+                "https://www.privacypolicies.com/live/1c799520-8892-4d7b-89ec-464b31fe2db9".toUri()
             startActivity(intent)
         }
         binding.tvTerms.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://kr-ansh.github.io/Project_C/terms")
+            intent.data = "https://kr-ansh.github.io/Project_C/terms".toUri()
             startActivity(intent)
         }
 
         binding.btnFeedback.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO)
-            intent.data = Uri.parse("mailto:")
+            intent.data = "mailto:".toUri()
             intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("kranshdev20@gmail.com"))
             startActivity(intent)
         }

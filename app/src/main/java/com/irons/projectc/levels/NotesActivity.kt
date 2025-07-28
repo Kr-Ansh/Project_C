@@ -2,12 +2,14 @@ package com.irons.projectc.levels
 
 import android.content.Context
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.irons.projectc.R
 import com.irons.projectc.databinding.ActivityNotesBinding
+import androidx.core.content.edit
 
 class NotesActivity : AppCompatActivity() {
 
@@ -28,6 +30,12 @@ class NotesActivity : AppCompatActivity() {
         }
 
         loadNotes()
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finish()
+            }
+        })
     }
 
     private fun loadNotes() {
@@ -38,9 +46,9 @@ class NotesActivity : AppCompatActivity() {
 
     private fun saveNotes() {
         val sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString(KEY_NOTES, notesBinding.etNotes.text.toString())
-        editor.apply()
+        sharedPreferences.edit {
+            putString(KEY_NOTES, notesBinding.etNotes.text.toString())
+        }
     }
 
     override fun onPause() {

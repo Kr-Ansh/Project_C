@@ -346,7 +346,7 @@
         This time, you\'re not given clues - you\'re given a story.\n\n
         An ordinary-looking news article has surfaced online. It seems harmless. Maybe even boring. But those who know where to look\.\.\. know better.\n\n
         Your task is simple - yet difficult: uncover the information hidden within.</string>
-    <string name="level_question_4.1">News Article: https://kr-ansh.github.io/Project_C/app/src/main/assests/index</string>
+    <string name="level_question_4.1">News Article: https://kr-ansh.github.io/Project_C/app/src/main/assets/index</string>
     <string name="level_4.1_hint">Try clicking on images, there captions might contain some clue.</string>
     <string name="level_4.1_hint2">Those flags might mean something, try searching it on Google Lens.</string>
     <string name="level_4.1_hint3">Have you checked in the details section of the image, it might have been renamed.</string>
@@ -362,7 +362,7 @@
         Decode what they hide.\n
         Piece it together.\n\n
         The truth is not in plain text.</string>
-    <string name="level_question_4.2">Forum: https://kr-ansh.github.io/Project_C/app/src/main/assests/forums</string>
+    <string name="level_question_4.2">Forum: https://kr-ansh.github.io/Project_C/app/src/main/assets/forums</string>
     <string name="level_4.2_hint">It feels like after every 10 min they are talking about something.</string>
     <string name="level_4.2_hint2">You might need to use multiple decryption tools some might be familiar to you some might be new?</string>
     <string name="level_4.2_hint3">Try using ChatGPT for finding the right tool for decoding.</string>

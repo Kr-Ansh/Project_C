@@ -12,15 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
-import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.irons.projectc.R
 import com.irons.projectc.databinding.ActivityLevelsBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.util.Calendar
+import androidx.core.content.edit
 
 class LevelsActivity : AppCompatActivity() {
 
@@ -101,7 +98,7 @@ class LevelsActivity : AppCompatActivity() {
 
         loadLevelContent()
 
-        customLogicAndDesignForLevel(currentChapterNo, currentLevelNo)
+        customLogicAndDesignForLevel()
 
         levelsBinding.buttonSubmit.setOnClickListener {
             if(currentChapterNo == 5) endgame();
@@ -268,7 +265,7 @@ class LevelsActivity : AppCompatActivity() {
     }
 
     // Custom logic or designs for specific levels
-    private fun customLogicAndDesignForLevel(chapterNo: Int, levelNo: Int) {
+    private fun customLogicAndDesignForLevel() {
 
         // Custom logic and design for level 3
         if(currentChapterNo == 3) {
@@ -280,8 +277,9 @@ class LevelsActivity : AppCompatActivity() {
             // Custom logic for level 3.3
             if (currentLevelNo == 3) {
                 val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
-                val editor = prefs.edit()
-                editor.putBoolean("isLevel3_3Entered", true).apply()
+                prefs.edit {
+                    putBoolean("isLevel3_3Entered", true)
+                }
 
                 levelsBinding.tvQuestion.isVisible = prefs.getBoolean("isExitClicked", false)
             }
@@ -298,7 +296,7 @@ class LevelsActivity : AppCompatActivity() {
     private fun endgame() {
 
         val userSubmission = levelsBinding.answerUserInput.text.toString().trim()
-        var finalAnswer = currentLevelData?.correctAnswer
+        val finalAnswer = currentLevelData?.correctAnswer
 
         val prefs: SharedPreferences = getSharedPreferences("GamePrefs", MODE_PRIVATE)
         val editor = prefs.edit()

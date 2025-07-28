@@ -2,20 +2,15 @@ package com.irons.projectc.chapters
 
 import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
-import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
-import androidx.transition.Transition
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -38,10 +33,10 @@ class ChapterActivity : AppCompatActivity() {
     private var userStatsListener: ValueEventListener? = null
     private lateinit var userStatsRef: DatabaseReference
 
-    private val TOTAL_CHAPTERS = 6 // Final chapter ui and logic will be added later
+    private val TOTAL_CHAPTERS = 6
     private var currentChapterNo: Int = 0
 
-    private val chapterUnlockCodes = mapOf( // These codes are very important for the final chapter
+    private val chapterUnlockCodes = mapOf(
         0 to "WAS", // Chapter 0 code
         1 to "TRUE", // Chapter 1 code
         2 to "MY", // Chapter 2 code

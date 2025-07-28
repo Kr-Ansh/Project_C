@@ -12,15 +12,11 @@ import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.OnUserEarnedRewardListener
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.irons.projectc.R
 import com.irons.projectc.databinding.ActivityHintBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class HintActivity : AppCompatActivity() {
 
@@ -55,7 +51,7 @@ class HintActivity : AppCompatActivity() {
 
         loadHints(currentChapterNo, currentLevelNo)
 
-        hintBinding.btnShowAd?.setOnClickListener { // Code for Ads logic
+        hintBinding.btnShowAd.setOnClickListener { // Code for Ads logic
 
             rewardedAd?.show(
                 this,
