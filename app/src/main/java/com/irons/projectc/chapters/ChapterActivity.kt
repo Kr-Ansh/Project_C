@@ -4,6 +4,7 @@ import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +27,8 @@ import kotlin.jvm.java
 class ChapterActivity : AppCompatActivity() {
 
     lateinit var chapterBinding: ActivityChapterBinding
+
+    private var mediaPlayer: MediaPlayer?= null
 
     val auth = FirebaseAuth.getInstance()
     val database = FirebaseDatabase.getInstance()
@@ -55,6 +58,8 @@ class ChapterActivity : AppCompatActivity() {
             insets
         }
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.btn_sound)
+
         currentChapterNo = intent.getIntExtra("chapterNo", 0)
 
         updateChapterTitle()
@@ -64,22 +69,64 @@ class ChapterActivity : AppCompatActivity() {
         }
 
         chapterBinding.btn1.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             startLevelActivity(1)
         }
         chapterBinding.btn2.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             startLevelActivity(2)
         }
         chapterBinding.btn3.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             startLevelActivity(3)
         }
         chapterBinding.btn4.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             startLevelActivity(4)
         }
         chapterBinding.btnFinal.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             startLevelActivity(0)
         }
 
         chapterBinding.btnNext.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
 
             userStatsRef.child("ch${currentChapterNo}stat").setValue(false) // Fixed a bug where chapterStat is not saving for existing players
 
@@ -138,6 +185,13 @@ class ChapterActivity : AppCompatActivity() {
             }
         }
         chapterBinding.btnBack.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             currentChapterNo--;
 
             val intent = Intent(this@ChapterActivity, ChapterActivity::class.java)
@@ -148,6 +202,13 @@ class ChapterActivity : AppCompatActivity() {
         }
 
         chapterBinding.btnHome.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             finish()
         }
     }

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
+import android.media.MediaPlayer
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
@@ -35,6 +36,8 @@ import com.irons.projectc.mainScreen.MainActivity
 class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     lateinit var loginBinding: ActivityLoginBinding
+
+    private var mediaPlayer: MediaPlayer ?= null
 
     //*********************** Google Sign In ***********************
     lateinit var googleSignInClient: GoogleSignInClient
@@ -70,6 +73,8 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             insets
         }
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.btn_sound)
+
         //****************DOB picker************************
         loginBinding.userInputDOB.isFocusable = false
         loginBinding.userInputDOB.setOnClickListener {
@@ -92,6 +97,14 @@ class LoginActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         //****************Google Sign In**********************
         registerActivityForGoogleSignIn()
         loginBinding.buttonGoogleSignIn.setOnClickListener {
+
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
 
             if(!isNetworkAvailable(this)) {
                 Toast.makeText(this@LoginActivity, "No internet connection detected.", Toast.LENGTH_SHORT).show()

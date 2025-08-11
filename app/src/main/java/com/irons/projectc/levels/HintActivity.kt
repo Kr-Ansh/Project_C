@@ -1,6 +1,7 @@
 package com.irons.projectc.levels
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +23,8 @@ class HintActivity : AppCompatActivity() {
 
     lateinit var hintBinding: ActivityHintBinding
 
+    private var mediaPlayer: MediaPlayer?= null
+
     var rewardedAd: RewardedAd ?= null
     var adsCount = 10
 
@@ -36,12 +39,28 @@ class HintActivity : AppCompatActivity() {
             insets
         }
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.btn_sound)
+
         loadAds()
 
         hintBinding.btnBack.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             finish()
         }
         hintBinding.btnNotes.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             val intent = Intent(this, NotesActivity::class.java)
             startActivity(intent)
         }
@@ -52,6 +71,14 @@ class HintActivity : AppCompatActivity() {
         loadHints(currentChapterNo, currentLevelNo)
 
         hintBinding.btnShowAd.setOnClickListener { // Code for Ads logic
+
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
 
             rewardedAd?.show(
                 this,

@@ -4,6 +4,7 @@ import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mainBinding: ActivityMainBinding
 
+    private var mediaPlayer: MediaPlayer ?= null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,6 +41,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Initialize MediaPlayer
+        mediaPlayer = MediaPlayer.create(this, R.raw.btn_sound)
+
 
         CoroutineScope(Dispatchers.IO).launch {
             // Initialize the Google Mobile Ads SDK on a background thread.
@@ -57,6 +64,14 @@ class MainActivity : AppCompatActivity() {
 
         // Play button
         mainBinding.btnPlay.setOnClickListener {
+            // Play sound
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare() // Prepare media player to play again from the start
+                }
+                start()
+            }
             if(!isNetworkAvailable(this)) {
                 Toast.makeText(this@MainActivity, "No internet connection detected.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -68,6 +83,13 @@ class MainActivity : AppCompatActivity() {
 
         // Settings button
         mainBinding.btnSettings.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             if(!isNetworkAvailable(this)) {
                 Toast.makeText(this@MainActivity, "No internet connection detected.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -78,12 +100,26 @@ class MainActivity : AppCompatActivity() {
 
         // About me button
         mainBinding.btnAbout.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             val intent = Intent(this@MainActivity, AboutActivity::class.java)
             startActivity(intent)
         }
 
         // Sign out button
         mainBinding.btnSignOut.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
 
             FirebaseAuth.getInstance().signOut()
 
@@ -104,6 +140,13 @@ class MainActivity : AppCompatActivity() {
 
         // Exit button
         mainBinding.btnExit.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             if(prefs.getBoolean("isLevel3_3Entered", false)) {
                 Toast.makeText(this, "Paradox", Toast.LENGTH_SHORT).show()
                 editor.putBoolean("isExitClicked", true).apply()

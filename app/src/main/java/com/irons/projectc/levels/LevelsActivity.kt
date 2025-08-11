@@ -3,6 +3,7 @@ package com.irons.projectc.levels
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
@@ -22,6 +23,8 @@ import androidx.core.content.edit
 class LevelsActivity : AppCompatActivity() {
 
     lateinit var levelsBinding: ActivityLevelsBinding
+
+    private var mediaPlayer: MediaPlayer?= null
 
     val database = FirebaseDatabase.getInstance()
     val ref = database.getReference("users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("stats")
@@ -93,6 +96,8 @@ class LevelsActivity : AppCompatActivity() {
             insets
         }
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.btn_sound)
+
         currentChapterNo = intent.getIntExtra("chapterNo", -1)
         currentLevelNo = intent.getIntExtra("levelNo", -1)
 
@@ -101,16 +106,37 @@ class LevelsActivity : AppCompatActivity() {
         customLogicAndDesignForLevel()
 
         levelsBinding.buttonSubmit.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             if(currentChapterNo == 5) endgame();
             else handleSubmit()
         }
         levelsBinding.btnHint!!.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             val intent = Intent(this@LevelsActivity, HintActivity::class.java)
             intent.putExtra("currentChapterNo", currentChapterNo)
             intent.putExtra("currentLevelNo", currentLevelNo)
             startActivity(intent)
         }
         levelsBinding.btnNotes!!.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             val intent = Intent(this@LevelsActivity, NotesActivity::class.java)
             intent.putExtra("currentChapterNo", currentChapterNo)
             intent.putExtra("currentLevelNo", currentLevelNo)

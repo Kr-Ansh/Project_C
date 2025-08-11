@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.activity.OnBackPressedCallback
@@ -21,6 +22,8 @@ import androidx.core.net.toUri
 class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     lateinit var binding: ActivitySettingsBinding
+
+    private var mediaPlayer: MediaPlayer ?= null
 
     private var database: FirebaseDatabase = FirebaseDatabase.getInstance()
     private var usersRef: DatabaseReference = database.getReference("users").child(FirebaseAuth.getInstance().currentUser!!.uid)
@@ -40,12 +43,14 @@ class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             insets
         }
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.btn_sound)
+
         loadUserData()
 
         binding.tvPrivacy.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data =
-                "https://www.privacypolicies.com/live/1c799520-8892-4d7b-89ec-464b31fe2db9".toUri()
+                "https://kr-ansh.github.io/Project_C/app/src/main/assets/Privacy_Policy".toUri()
             startActivity(intent)
         }
         binding.tvTerms.setOnClickListener {
@@ -55,6 +60,13 @@ class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         }
 
         binding.btnFeedback.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             val intent = Intent(Intent.ACTION_SENDTO)
             intent.data = "mailto:".toUri()
             intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("kranshdev20@gmail.com"))
@@ -62,6 +74,13 @@ class SettingsActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         }
 
         binding.btnSave.setOnClickListener {
+            mediaPlayer?.apply {
+                if (isPlaying) {
+                    stop()
+                    prepare()
+                }
+                start()
+            }
             val newUsername = binding.etUsername.text.toString()
             val newDob = binding.etDob.text.toString()
             val newEmail = binding.etEmail.text.toString()
