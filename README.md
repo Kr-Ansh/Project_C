@@ -34,10 +34,3 @@ Use **any tool**, technique, or trick — if it helps you solve the level, it's 
 - 🔐 **Google Sign-in**
 
 ---
-
-## 📜 Privacy Policy
-
-View the full Privacy & Terms here:  
-👉 [Privacy Policy]([https://www.privacypolicies.com/live/1c799520-8892-4d7b-89ec-464b31fe2db9](https://kr-ansh.github.io/Project_C/app/src/main/assets/Privacy_Policy))
-
----
