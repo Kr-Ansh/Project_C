@@ -40,7 +40,7 @@ class NotesActivity : AppCompatActivity() {
 
     private fun loadNotes() {
         val sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val savedNotes = sharedPreferences.getString(KEY_NOTES, "Add a dummy note here...")
+        val savedNotes = sharedPreferences.getString(KEY_NOTES, null)
         notesBinding.etNotes.setText(savedNotes)
     }
 
