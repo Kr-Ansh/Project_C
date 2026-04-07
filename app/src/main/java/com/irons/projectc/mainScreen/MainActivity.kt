@@ -25,6 +25,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/*
+ * Copyright (c) 2026 [Kumar Ansh / Kr-Ansh]
+ * All rights reserved. 
+ * This code is licensed under the GNU GPLv3 License.
+ */
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var mainBinding: ActivityMainBinding
